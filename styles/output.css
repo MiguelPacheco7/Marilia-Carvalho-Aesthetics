@@ -675,10 +675,6 @@ video {
   right: 1.5rem;
 }
 
-.top-0 {
-  top: 0px;
-}
-
 .top-6 {
   top: 1.5rem;
 }
@@ -693,10 +689,6 @@ video {
 
 .z-40 {
   z-index: 40;
-}
-
-.z-50 {
-  z-index: 50;
 }
 
 .z-auto {
@@ -804,6 +796,11 @@ video {
   margin-right: auto;
 }
 
+.my-12 {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
 .mb-1 {
   margin-bottom: 0.25rem;
 }
@@ -834,6 +831,10 @@ video {
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.ml-0 {
+  margin-left: 0px;
 }
 
 .ml-10 {
@@ -876,6 +877,10 @@ video {
   margin-top: 3rem;
 }
 
+.mt-16 {
+  margin-top: 4rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -894,6 +899,10 @@ video {
 
 .mt-auto {
   margin-top: auto;
+}
+
+.mr-10 {
+  margin-right: 2.5rem;
 }
 
 .box-border {
@@ -1010,10 +1019,6 @@ video {
 .size-auto {
   width: auto;
   height: auto;
-}
-
-.h-10 {
-  height: 2.5rem;
 }
 
 .h-12 {
@@ -3670,11 +3675,6 @@ footer {
     order: 2;
   }
 
-  .md\:mx-0 {
-    margin-left: 0px;
-    margin-right: 0px;
-  }
-
   .md\:-mr-4 {
     margin-right: -1rem;
   }
@@ -3687,8 +3687,48 @@ footer {
     margin-bottom: 2rem;
   }
 
+  .md\:ml-10 {
+    margin-left: 2.5rem;
+  }
+
+  .md\:ml-\[131px\] {
+    margin-left: 131px;
+  }
+
+  .md\:mr-\[75px\] {
+    margin-right: 75px;
+  }
+
   .md\:mt-16 {
     margin-top: 4rem;
+  }
+
+  .md\:ml-5 {
+    margin-left: 1.25rem;
+  }
+
+  .md\:ml-20 {
+    margin-left: 5rem;
+  }
+
+  .md\:ml-3 {
+    margin-left: 0.75rem;
+  }
+
+  .md\:ml-32 {
+    margin-left: 8rem;
+  }
+
+  .md\:ml-2 {
+    margin-left: 0.5rem;
+  }
+
+  .md\:ml-28 {
+    margin-left: 7rem;
+  }
+
+  .md\:ml-24 {
+    margin-left: 6rem;
   }
 
   .md\:flex {
@@ -3697,14 +3737,6 @@ footer {
 
   .md\:hidden {
     display: none;
-  }
-
-  .md\:h-12 {
-    height: 3rem;
-  }
-
-  .md\:h-14 {
-    height: 3.5rem;
   }
 
   .md\:h-9 {
@@ -3732,6 +3764,10 @@ footer {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
   .md\:gap-10 {
     gap: 2.5rem;
   }
@@ -3747,11 +3783,6 @@ footer {
 
   .md\:p-10 {
     padding: 2.5rem;
-  }
-
-  .md\:px-12 {
-    padding-left: 3rem;
-    padding-right: 3rem;
   }
 
   .md\:py-12 {
@@ -3778,8 +3809,16 @@ footer {
     text-align: left;
   }
 
+  .md\:text-center {
+    text-align: center;
+  }
+
   .md\:text-right {
     text-align: right;
+  }
+
+  .md\:text-start {
+    text-align: start;
   }
 
   .md\:text-3xl {

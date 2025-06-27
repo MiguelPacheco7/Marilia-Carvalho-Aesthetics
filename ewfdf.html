@@ -8,11 +8,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-    <title>Marilia Carvalho - Especialista em Harmonização Facial e Corporal</title>
+    <title>Marilia Carvalho Aesthetics - Especialista em Harmonização Facial e Corporal</title>
+    <link rel="icon" type="image/png" href="/MARCA D_ÁGUA/MD18.png">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-image: url('/Assets/Web 1920 – 10.jpg');
+            background-image: url('/Assets/Web 1920 – 10.6.jpg');
             background-attachment: scroll;
             background-size: cover;
             background-repeat: no-repeat;
@@ -31,6 +32,19 @@
             z-index: 100; /* Z-index alto para ficar acima de tudo */
             transition: top 0.3s ease-in-out;
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-title-color {
+            color: #8F6B6B;
+        }
+
+        .text-color {
+            color: #131D3B;
+        }
+
+        .bt-color {
+            background-color: #51648C;
+            color: white;
         }
 
         .shadowgray {
@@ -210,12 +224,10 @@
         }
 
         .scroll{
-            width: 93vw;
             height: 100vh;
             position: sticky;
             top: 6rem; /* Posição fixa abaixo do cabeçalho */
-            z-index: 1; /* Garante que ela esteja acima do body, mas abaixo do header */
-            left: 50%; /* Centraliza a div no vw */
+            z-index: 1; /* Garante que ela esteja acima do body, mas abaixo do header */  
         }
 
         .overlay-section1 {
@@ -336,92 +348,99 @@
     </header>
 
         <main>
-            <section class="min-h-[80vh] mt-[60px] ml-[75px]">
-                <div class="container mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-                    <div class="ml-14 text-center md:text-left">
-                        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4 md:mb-6 leading-tight">
+            <section class="min-h-[80vh] mt-[60px] ml-0 md:ml-[131px]">
+                <div class="container mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center px-4">
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-title-color mb-4 md:mb-6 leading-tight">
                             Especialista em <span class="text-brand-brown">harmonização facial e corporal</span>
                         </h1>
-                        <p class="text-lg text-gray-700 mb-6 md:mb-8">
+                        <p class="text-lg text-color mb-6 md:mb-8">
                             Cuidando do seu bem-estar com dedicação e excelência. Cada
                             procedimento é realizado com precisão, carinho e respeito às suas
                             necessidades, realçando sua beleza natural de forma única e personalizada.
                         </p>
-                        <a href="#contato" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                        <a href="#contato" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
                             AGENDAR CONSULTA
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
-                        <div>
-                            <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="[Imagem de Marilia]" class="rounded-xl shadowgray mx-auto w-3/4 max-w-xs h-auto">
+                        <div class="flex justify-center">
+                            <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="[Imagem de Marilia]" class="rounded-xl shadowgray w-3/4 max-w-xs h-auto">
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section id="sobre" class="min-h-[80vh] mr-[75px] flex items-center">
-                <div class="container mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-                    <div class="order-2 md:order-1">
-                        <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="Imagem de tratamento facial" class="rounded-xl shadow-gray-400/50 shadow-lg mx-auto w-3/4 max-w-xs h-auto">
-                    </div>
-                    <div class="order-1 md:order-2 text-center md:text-left">
-                        <h2 class="text-3xl font-semibold text-gray-800">Cuidados especiais para</h2>
-                        <h2 class="text-3xl font-semibold text-gray-800 mb-6">valorizar sua beleza e saúde</h2>              
-                        <div class="space-y-4 mb-8">
-                            <div class="flex items-start gap-4">
-                                <span class="text-xl font-bold text-gray-500">1</span>
-                                <div>
-                                    <p class="text-gray-600 leading-tight">Cuidados especiais para</p>
-                                    <p class="text-gray-600 leading-tight">valorizar sua beleza e saúde</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <span class="text-xl font-bold text-gray-500">2</span>
-                                <div>
-                                    <p class="text-gray-600 leading-tight">Cuidados especiais para</p>
-                                    <p class="text-gray-600 leading-tight">valorizar sua beleza e saúde</p>
-                                </div>
-                            </div>
-
-                            <div class="flex items-start gap-4">
-                                <span class="text-xl font-bold text-gray-500">3</span>
-                                <div>
-                                    <p class="text-gray-600 leading-tight">Cuidados especiais para</p>
-                                    <p class="text-gray-600 leading-tight">valorizar sua beleza e saúde</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <span class="text-xl font-bold text-gray-500">4</span>
-                                <div>
-                                    <p class="text-gray-600 leading-tight">Cuidados especiais para</p>
-                                    <p class="text-gray-600 leading-tight">valorizar sua beleza e saúde</p>
-                                </div>
-                            </div>
+            <section id="sobre" class="min-h-[80vh] mt-16 md:mr-[75px] flex items-center">
+                <div class="container mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                        <div class="order-2 md:order-1 flex justify-center">
+                            <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="Imagem de tratamento facial" class="rounded-xl shadow-gray-400/50 shadow-lg w-3/4 max-w-xs h-auto">
                         </div>
-                        <a href="#servicos" class="btn-secondary border-2 border-gray-400/80 text-gray-600 font-semibold py-3 px-6 rounded-lg inline-block hover:bg-gray-100 transition-colors">
-                            Conheça nossos serviços
-                        </a>
+                        <div class="order-1 md:order-2 flex flex-col items-center md:items-start">
+                            <div class="text-3xl font-semibold text-title-color text-center md:text-left">
+                                <h2>Cuidados especiais para</h2>
+                                <h2 class="mb-6">valorizar sua beleza e saúde</h2>
+                            </div>
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">1</span>
+                                    <div>
+                                        <p class="text-color leading-tight">Cuidados especiais para</p>
+                                        <p class="text-color leading-tight">valorizar sua beleza e saúde</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">2</span>
+                                    <div>
+                                        <p class="text-color leading-tight">Cuidados especiais para</p>
+                                        <p class="text-color leading-tight">valorizar sua beleza e saúde</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">3</span>
+                                    <div>
+                                        <p class="text-color leading-tight">Cuidados especiais para</p>
+                                        <p class="text-color leading-tight">valorizar sua beleza e saúde</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">4</span>
+                                    <div>
+                                        <p class="text-color leading-tight">Cuidados especiais para</p>
+                                        <p class="text-color leading-tight">valorizar sua beleza e saúde</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#servicos" class="btn-secondary border-2 border-gray-400/80 text-gray-600 font-semibold py-3 px-6 rounded-lg inline-block hover:bg-gray-100 transition-colors">
+                                Conheça nossos serviços
+                            </a>
+                        </div>
                     </div>
                 </div>
             </section>
-            <section class="scroll min-h-[80vh] mt-28 ml-[75px]">
-                <div class="container mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-                    <div class="ml-14 text-center md:text-left">
-                        <h2 class="text-3xl font-semibold text-gray-800 mb-4">Quem Sou Eu</h2>
-                        <p class="text-gray-600 mb-4 leading-relaxed">
-                            Cada pessoa é única e acreditamos que os tratamentos
-                            devem ser tão personalizados quanto as suas necessidades.
-                        </p>
-                        <p class="text-gray-600 mb-6 leading-relaxed">
-                            Cuidados faciais e corporais personalizados, sempre com
-                            atenção especial à sua saúde e aos seus objetivos,
-                            buscando resultados que respeitem sua beleza natural.
-                        </p>
-                        <a href="#contato" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
-                            Conheça mais
-                        </a>
-                    </div>
-                        <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="[Imagem de bem-estar e cuidado]" class="rounded-xl shadowgray mx-auto w-3/4 max-w-xs h-auto">
+
+            <section class="scroll min-h-[80vh] mt-16 my-12 ml-0 md:ml-[131px]">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                        <div class="text-center md:text-left">
+                            <h2 class="text-3xl font-semibold text-title-color mb-4">Quem Sou Eu</h2>
+                            <p class="text-color mb-4 leading-relaxed">
+                                Cada pessoa é única e acreditamos que os tratamentos
+                                devem ser tão personalizados quanto as suas necessidades.
+                            </p>
+                            <p class="text-color mb-6 leading-relaxed">
+                                Cuidados faciais e corporais personalizados, sempre com
+                                atenção especial à sua saúde e aos seus objetivos,
+                                buscando resultados que respeitem sua beleza natural.
+                            </p>
+                            <a href="#contato" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                                Conheça mais
+                            </a>
+                        </div>
+                        <div class="flex justify-center">
+                            <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="[Imagem de bem-estar e cuidado]" class="rounded-xl shadowgray w-3/4 max-w-xs h-auto">
+                        </div>
                     </div>
                 </div>
             </section>
@@ -460,10 +479,10 @@
                     <div class="carousel-3d">
                         <div class="carousel-3d-track">
                             <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/9D7B7B/FFFFFF?text=Congresso+1" alt="[Imagem de congresso 1]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/374151/FFFFFF?text=Procedimento+2" alt="[Imagem de procedimento 2]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/6B6B6B/FFFFFF?text=Equipe+3" alt="[Imagem da equipe 3]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/3A2B1E/FFFFFF?text=Clínica+4" alt="[Imagem da clínica 4]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/BF9B8E/FFFFFF?text=Evento+5" alt="[Imagem de evento 5]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/374151/FFFFFF?text=Congresso+2" alt="[Imagem de procedimento 2]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/6B6B6B/FFFFFF?text=Congresso+3" alt="[Imagem da equipe 3]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/3A2B1E/FFFFFF?text=Congresso+4" alt="[Imagem da clínica 4]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/BF9B8E/FFFFFF?text=Congresso+5" alt="[Imagem de evento 5]"></div>
                         </div>
                     </div>
                     <button id="prev-btn" class="carousel-nav-btn">
@@ -615,7 +634,7 @@
                     <img src="/MARCA D_ÁGUA/MD03.png" alt="Logo Marilia Carvalho Rodapé">
                 </a>
             </div>
-            <div class="ml-10">
+            <div class="md:ml-10">
                 <h4 class="text-lg font-semibold text-white mb-3">LOCAIS DE ATENDIMENTO</h4>
                 <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Instituto Bahmad - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
                 <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
