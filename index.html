@@ -34,6 +34,20 @@
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
         }
 
+        /* Oculta os DIVS dos containers por padrão em telas pequenas (celulares) */
+        #quem-sou-eu-img-container,
+        #agende-consulta-img-container {
+            display: none !important;
+        }
+
+        /* Mostra os DIVS dos containers em telas com largura de 768px ou mais (desktop) */
+        @media (min-width: 768px) {
+            #quem-sou-eu-img-container,
+            #agende-consulta-img-container {
+                display: flex !important; /* Usamos 'flex' porque o div já tem 'flex justify-center' */
+            }
+        }
+
         .text-color {
             color: #8F6B6B;
         }
@@ -220,7 +234,6 @@
         }
 
         .scroll{
-            height: 100vh;
             position: sticky;
             top: 6rem; /* Posição fixa abaixo do cabeçalho */
             z-index: 1; /* Garante que ela esteja acima do body, mas abaixo do header */  
@@ -374,7 +387,7 @@
                             <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="Imagem de tratamento facial" class="rounded-xl shadow-gray-400/50 shadow-lg w-3/4 max-w-xs h-auto">
                         </div>
                         <div class="order-1 md:order-2 flex flex-col items-center md:items-start">
-                            <div class="text-3xl font-semibold text-color text-center md:text-left px-7 md:px-0">
+                            <div class="text-3xl font-semibold text-color text-center md:text-left">
                                 <h2>Cuidados especiais para</h2>
                                 <h2 class="mb-6">valorizar sua beleza e saúde</h2>
                             </div>
@@ -416,7 +429,7 @@
                 </div>
             </section>
 
-            <section class="scroll min-h-[80vh] mt-16 my-12 ml-0 md:ml-[131px]">
+            <section class="scroll min-h-[80vh] mt-16 ml-0 md:ml-[131px]">
                 <div class="container mx-auto px-4">
                     <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                         <div class="text-center md:text-left">
@@ -434,7 +447,7 @@
                                 Conheça mais
                             </a>
                         </div>
-                        <div class="flex justify-center">
+                        <div id="quem-sou-eu-img-container" class="flex justify-center">
                             <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="[Imagem de bem-estar e cuidado]" class="rounded-xl shadowgray w-3/4 max-w-xs h-auto">
                         </div>
                     </div>
@@ -616,10 +629,9 @@
                         </div>
                     </div>
 
-                    <div class="mt-8 lg:mt-0 lg:ml-8 flex-shrink-0 w-full lg:w-auto lg:max-w-sm">
+                    <div id="agende-consulta-img-container" class="mt-8 lg:mt-0 lg:ml-8 flex-shrink-0 w-full lg:w-auto lg:max-w-sm">
                         <img src="https://placehold.co/340x350/9D7B7B/FFFFFF?text=Imagem" alt="Imagem Procedimento" class="w-full rounded-lg">
                     </div>
-
                 </div>
             </section>
         </main>
