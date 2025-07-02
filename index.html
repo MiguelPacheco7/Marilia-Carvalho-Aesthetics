@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/output.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <title>Marilia Carvalho Aesthetics - Especialista em Harmonização Facial e Corporal</title>
+    <link rel="icon" type="image/png" href="/MARCA D_ÁGUA/MD18.png">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-image: url('/Assets/Web 1920 – 10.jpg');
+            background-attachment: scroll;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        .floating-header {
+            position: sticky;
+            top: 1rem;
+            width: 95%;
+            max-width: 1280px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            border-radius: 1rem;
+            z-index: 100; /* Z-index alto para ficar acima de tudo */
+            transition: top 0.3s ease-in-out;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Oculta os DIVS dos containers por padrão em telas pequenas (celulares) */
+        #quem-sou-eu-img-container,
+        #agende-consulta-img-container {
+            display: none !important;
+        }
+
+        /* Mostra os DIVS dos containers em telas com largura de 768px ou mais (desktop) */
+        @media (min-width: 768px) {
+            #quem-sou-eu-img-container,
+            #agende-consulta-img-container {
+                display: flex !important; /* Usamos 'flex' porque o div já tem 'flex justify-center' */
+            }
+        }
+
+        .text-color {
+            color: #8F6B6B;
+        }
+
+        .bt-color {
+            background-color: #51648C;
+            color: white;
+        }
+
+        .shadowgray {
+            --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+            --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+            box-shadow: var(--tw-ring-offset-shadow, 0 0 #1E1E1E), var(--tw-ring-shadow, 0 0 #1E1E1E), var(--tw-shadow);
+        }
+
+        .brand-brown { color: #3A2B1E; } 
+
+        .btn-primary {
+            background-color: #3A2B1E; 
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        .btn-primary:hover {
+            background-color: #3A2B1E;
+        }
+        .btn-secondary {
+            border-color: #51648C;
+            color: #51648C;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .btn-secondary:hover {
+            background-color: #51648C;
+            color: white;
+        }
+        .section-title {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            color: #2f3236; /* gray-600 */
+            text-align: center;
+            margin-bottom: 1rem; /* 48px */
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .card {
+            background-color: white;
+            border-radius: 0.75rem; /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+        }
+
+        .service-card1 {
+            background-color: #9D7B7B; 
+        }
+        .service-card2 {
+            background-color: #374151; 
+        }
+        .service-card3 {
+            background-color: #6B6B6B; 
+        }
+
+        .card-wtsp {
+            background-color: #51648C;
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+            border-bottom-left-radius: 2rem ;
+            border-bottom-right-radius: 2rem;
+        }
+
+        .carousel-3d-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 4rem auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .carousel-3d {
+            position: relative;
+            width: 100%;
+            height: 400px; /* Altura do carrossel */
+            perspective: 1500px; /* Efeito de profundidade */
+            transform-style: preserve-3d;
+        }
+        
+        .carousel-3d-track {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+        }
+
+        .carousel-3d-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+            width: 60%; /* Largura do slide principal */
+            height: 100%;
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+            opacity: 0; /* Começam invisíveis */
+        }
+        
+        .carousel-3d-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Slide Ativo (Central) */
+        .carousel-3d-slide.active {
+            transform: translateZ(0) scale(1);
+            opacity: 1;
+            z-index: 10;
+        }
+
+        /* Slide Anterior */
+        .carousel-3d-slide.prev {
+            transform: translateX(-45%) translateZ(-150px) rotateY(35deg) scale(0.8);
+            opacity: 0.5;
+            z-index: 5;
+        }
+
+        /* Slide Posterior */
+        .carousel-3d-slide.next {
+            transform: translateX(45%) translateZ(-150px) rotateY(-35deg) scale(0.8);
+            opacity: 0.5;
+            z-index: 5;
+        }
+        
+        /* Botões de Navegação */
+        .carousel-nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 40;
+            background-color: rgba(255, 255, 255, 0.7);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+        
+        .carousel-nav-btn:hover {
+            background-color: white;
+        }
+
+        #prev-btn {
+            left: 10px;
+        }
+
+        #next-btn {
+            right: 10px;
+        }
+
+        .testimonial-text-clamp {
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3; /* Limita o texto a 3 linhas */
+            line-clamp: 3;
+        }
+        .testimonial-text-expanded {
+            -webkit-line-clamp: unset; /* Remove o limite de linhas */
+            line-clamp: unset;
+        }
+
+        .scroll{
+            position: sticky;
+            top: 6rem; /* Posição fixa abaixo do cabeçalho */
+            z-index: 1; /* Garante que ela esteja acima do body, mas abaixo do header */  
+        }
+
+        .overlay-section1 {
+            position: relative; /* Necessário para que o z-index funcione */
+            z-index: 2; /* Garante que esta seção fique acima da seção .scroll (z-index: 1) */
+            background: rgba(250, 235, 241);
+            border-top-left-radius: 2rem;
+            border-top-right-radius: 2rem;
+            box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
+            z-index: 1; /* Garante que ela esteja acima do body, mas abaixo do header */
+        }
+
+        .overlay-section {
+            position: relative; /* Necessário para que o z-index funcione */
+            z-index: 2; /* Garante que esta seção fique acima da seção .scroll (z-index: 1) */
+            background: rgba(250, 235, 241);
+        }
+
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .page-header-bg {
+            background: linear-gradient(to bottom right, #f3e9e0, #e6dace);
+            /* Mesmo gradiente da home */
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 0.75rem;
+            /* 12px */
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e5e7eb;
+            /* gray-200 */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-card .quote-icon {
+            color: #cbb4a4; /* Tom de marrom mais claro para as aspas */
+        }
+
+        .star-rating svg {
+            color: #f59e0b; /* amber-500 for stars */
+            width: 1.25rem; /* 20px */
+            height: 1.25rem; /* 20px */
+        }
+
+        footer {
+            position: relative;
+            z-index: 2;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="bg-white/80 backdrop-blur-sm floating-header">
+        <div class="container mx-auto flex justify-between items-center py-3 px-4">
+            <a href="index.html" class="flex items-center text-2xl font-bold text-gray-700">
+                <img src="/MARCA D_ÁGUA/MD04.png" alt="Logo Marilia Carvalho" class="h-7 md:h-9">
+            </a>
+
+            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                <a href="index.html" class="text-brand-brown font-semibold transition-colors">Início</a>
+                <a href="quem-sou-eu.html" class="text-gray-600 hover:text-brand-brown transition-colors">Quem Sou Eu</a>
+                <a href="tratamentos.html" class="text-gray-600 hover:text-brand-brown transition-colors">Tratamentos</a>
+                <a href="index.html#contato" class="text-gray-600 hover:text-brand-brown transition-colors">Contato</a>
+            </nav>
+
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="https://ig.me/m/YOURUSERNAME" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+                <a href="https://wa.me/5562994479641" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="WhatsApp">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="md:hidden">
+                <button id="menu-btn" class="text-gray-600 hover:text-brand-brown focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="md:hidden hidden fixed inset-0 bg-white z-40 pt-16 transform -translate-x-full">
+            <button id="close-menu-btn" class="absolute top-6 right-6 text-gray-600 hover:text-brand-brown focus:outline-none">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <div class="bg-white container mx-auto px-6 py-4">
+                <nav class="flex flex-col space-y-6 text-center mt-8">
+                    <a href="index.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Início</a>
+                    <a href="quem-sou-eu.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Quem Sou Eu</a>
+                    <a href="tratamentos.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Tratamentos</a>
+                    <a href="index.html#contato" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Contato</a>
+                </nav>
+                <div class="flex justify-center space-x-6 mt-10">
+                    <a href="https://ig.me/m/dra.marilliacarvalho" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                    </a>
+                    <a href="https://wa.me/5562994479641" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="WhatsApp">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <main>
+            <section class="mt-[60px] ml-0 md:ml-[131px]">
+                <div class="container mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center px-4">
+                    <div class="text-center md:text-left">
+                        <h1 class="text-4xl md:text-5xl font-bold text-color mb-4 md:mb-6 leading-tight">
+                            Especialista em <span class="text-brand-brown">harmonização facial e corporal</span>
+                        </h1>
+                        <p class="text-lg text-color mb-6 md:mb-8">
+                            Cuidando do seu bem-estar com dedicação e excelência. 
+                            Cada procedimento é realizado com precisão, carinho e 
+                            respeito às suas necessidades, realçando sua beleza 
+                            natural de forma única e personalizada.
+                        </p>
+                        <a href="https://wa.me/5562994479641" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                            AGENDAR CONSULTA
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                        <div class="flex justify-center">
+                            <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="[Imagem de Marilia]" class="rounded-xl shadowgray w-3/4 max-w-xs h-auto">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sobre" class="min-h-[80vh] mt-16 md:mr-[75px] flex items-center">
+                <div class="container mx-auto">
+                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                        <div class="order-2 md:order-1 flex justify-center">
+                            <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="Imagem de tratamento facial" class="rounded-xl shadow-gray-400/50 shadow-lg w-3/4 max-w-xs h-auto">
+                        </div>
+                        <div class="order-1 md:order-2 flex flex-col items-center md:items-start">
+                            <div class="text-3xl font-semibold text-color text-center md:text-left">
+                                <h2>Cuidados especiais para</h2>
+                                <h2 class="mb-6">valorizar sua beleza e saúde</h2>
+                            </div>
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">1</span>
+                                    <div>
+                                        <p class="text-color leading-tight">Cada procedimento é pensado para realçar o que você tem de mais bonito,</p>
+                                        <p class="text-color leading-tight">com naturalidade e equilíbrio.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">2</span>
+                                    <div>
+                                        <p class="text-color leading-tight">Tratamentos que cuidam da sua pele e do seu corpo de forma integrada,</p>
+                                        <p class="text-color leading-tight">com foco em bem-estar e resultados.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">3</span>
+                                    <div>
+                                        <p class="text-color leading-tight">O que há de mais avançado em estética facial e corporal,</p>
+                                        <p class="text-color leading-tight">aliado a um olhar técnico e sensível.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold text-color">4</span>
+                                    <div>
+                                        <p class="text-color leading-tight">Mais do que estética, uma experiência: ambiente acolhedor, atenção plena e protocolos feitos especialmente</p>
+                                        <p class="text-color leading-tight">para atender às suas necessidades únicas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="#tratamentos" class="btn-secondary border-2 border-gray-400/80 text-gray-600 font-semibold py-3 px-6 rounded-lg inline-block hover:bg-gray-100 transition-colors">
+                                Conheça nossos serviços
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="scroll min-h-[80vh] mt-16 ml-0 md:ml-[131px]">
+                <div class="container mx-auto px-4">
+                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                        <div class="text-center md:text-left">
+                            <h2 class="text-3xl font-semibold text-color mb-4">Quem Sou Eu</h2>
+                            <p class="text-color mb-3 leading-relaxed">
+                                Sou a Dra. Maríllia Carvalho, especialista 
+                                em harmonização facial e corporal.
+                            </p>
+                            <p class="text-color mb-3 leading-relaxed">
+                                Acredito que estética de verdade começa com escuta, 
+                                personalização e respeito à beleza única de cada pessoa.
+                            </p>
+                            <p class="text-color mb-3 leading-relaxed">
+                                Cada protocolo é pensado com dedicação, 
+                                técnica e sensibilidade — sempre priorizando saúde, 
+                                segurança e resultados naturais.
+                            </p>
+                            <p class="text-color mb-6 leading-relaxed">
+                                Aqui, você encontra mais do que procedimentos: 
+                                vive uma experiência de cuidado, bem-estar e confiança.
+                            </p>
+                            <a href="https://ig.me/m/dra.marilliacarvalho" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                                Conheça mais
+                            </a>
+                        </div>
+                        <div id="quem-sou-eu-img-container" class="flex justify-center">
+                            <img src="https://placehold.co/350x400/9D7B7B/FFFFFF?text=Imagem" alt="[Imagem de bem-estar e cuidado]" class="rounded-xl shadowgray w-3/4 max-w-xs h-auto">
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="tratamentos" class="overlay-section1 py-8 md:py-12 sm:px-8 lg:px-16"> 
+                <div class="mb-10 container mx-auto">
+                    <h3 class="text-center font-semibold text-amber-950 mb-4">TRATAMENTOS</h3>
+                    <h1 class="section-title text-gray-800">Tratamentos de Alto Padrão</h1>
+                    <p class="section-subtitle">  
+                        Criados para quem busca mais do que beleza: 
+                        resultados visíveis, naturais e com total segurança.
+                    </p>
+                    <p class="section-subtitle">
+                        Cada protocolo é desenhado com excelência técnica, 
+                        visão estética apurada e atenção absoluta ao que você realmente precisa.
+                    </p>
+                </div>
+                <div class="container mx-auto px-4 sm:px-0 lg:max-w-[960px]">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-14 sm:gap-8 mb-3 justify-items-center">
+                        <div class="service-card1 p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center max-w-xs w-full mx-auto">
+                            <img src="/Fotografias/ortomolecular.PNG" alt="[Ícone de Suplementos]" class="mx-auto mb-2 h-20 w-20 rounded-full object-cover shadow-md">
+                            <h3 class="text-white text-xl font-semibold mb-2">ORTOMOLECULAR</h3>
+                            <p class="text-white text-sm">Cuidando da sua beleza de dentro para fora.Suporte avançado para saúde, vitalidade e equilíbrio — porque o brilho começa no interior.</p>
+                        </div>
+                        <div class="service-card2 p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center max-w-xs w-full mx-auto">
+                            <img src="/Fotografias/corporal.PNG" alt="[Ícone Corporal]" class="mx-auto mb-2 h-20 w-20 rounded-full object-cover shadow-md">
+                            <h3 class="text-white text-xl font-semibold mb-2">CORPORAL</h3>
+                            <p class="text-white text-sm"> Harmonize formas, eleve sua autoestima.Tratamentos sob medida que valorizam cada curva com sofisticação e naturalidade.</p>
+                        </div>
+                        <div class="service-card3 p-6 rounded-lg text-center shadow-lg hover:shadow-xl transition-shadow duration-300 flex flex-col items-center max-w-xs w-full mx-auto">
+                            <img src="/Fotografias/facial.PNG" alt="[Ícone Facial]" class="mx-auto mb-2 h-20 w-20 rounded-full object-cover shadow-md">
+                            <h3 class="text-white text-xl font-semibold mb-2">FACIAL</h3>
+                            <p class="text-white text-sm">Sua beleza, rejuvenescida com precisão. Protocolos exclusivos para uma pele mais firme, luminosa e com aparência renovada.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="carousel" class="overlay-section py-14 md:py-24 sm:px-8 lg:px-16"> 
+                <div class="carousel-3d-container">
+                    <div class="carousel-3d">
+                        <div class="carousel-3d-track">
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/9D7B7B/FFFFFF?text=Congresso+1" alt="[Imagem de congresso 1]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/374151/FFFFFF?text=Congresso+2" alt="[Imagem de procedimento 2]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/6B6B6B/FFFFFF?text=Congresso+3" alt="[Imagem da equipe 3]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/3A2B1E/FFFFFF?text=Congresso+4" alt="[Imagem da clínica 4]"></div>
+                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/BF9B8E/FFFFFF?text=Congresso+5" alt="[Imagem de evento 5]"></div>
+                        </div>
+                    </div>
+                    <button id="prev-btn" class="carousel-nav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                    </button>
+                    <button id="next-btn" class="carousel-nav-btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                    </button>
+                </div>
+            </section>
+
+            <section id="depoimentos" class="overlay-section py-14 md:py-24 px-4 sm:px-8 lg:px-16">
+                <div class="container mx-auto max-w-6xl">
+                    <!-- Título da Seção -->
+                    <div class="text-center mb-12">
+                        <h3 class="text-center font-semibold text-amber-950 mb-4">DEPOIMENTOS</h3>
+                        <h2 class="section-title text-gray-800 leading-tight">Nossos clientes amam o que fazemos</h2>
+                        <p class="section-subtitle mt-2">Veja o que estão dizendo sobre nossas experiências</p>
+                    </div>
+
+                    <!-- Grid de Depoimentos -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+                        <!-- Card de Depoimento 1 (com texto longo de exemplo) -->
+                        <div class="testimonial-card bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <!-- Cabeçalho do Card -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center font-bold text-xl">
+                                    <span>JM</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Jordana Mello</h4>
+                                    <p class="text-sm text-gray-500">15 de Junho, 2025</p>
+                                </div>
+                            </div>
+                            <!-- Avaliação -->
+                            <div class="flex items-center gap-2">
+                                <div class="flex text-yellow-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-green-500"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <!-- Texto do Depoimento -->
+                            <p class="testimonial-text testimonial-text-clamp text-gray-600 leading-relaxed">
+                                "O resultado superou todas as minhas expectativas! Me sinto renovada e muito mais confiante. O atendimento da Marilia foi impecável do início ao fim, ela explicou cada detalhe do procedimento com muita paciência e profissionalismo. Com certeza voltarei mais vezes e já indiquei para todas as minhas amigas!"
+                            </p>
+                            <!-- Link Leia Mais -->
+                            <a href="#" class="read-more-btn text-brand-brown font-semibold hover:underline mt-auto">Leia mais</a>
+                        </div>
+
+                        <!-- Card de Depoimento 2 -->
+                        <div class="testimonial-card bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <!-- Conteúdo... -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-bold text-xl"><span>CA</span></div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Carlos Alberto</h4>
+                                    <p class="text-sm text-gray-500">12 de Junho, 2025</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex text-yellow-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-green-500"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <p class="testimonial-text testimonial-text-clamp text-gray-600 leading-relaxed">"Profissionalismo impecável e resultados que falam por si. Recomendo a todos que buscam qualidade e confiança."</p>
+                            <a href="#" class="read-more-btn text-brand-brown font-semibold hover:underline mt-auto">Leia mais</a>
+                        </div>
+
+                        <!-- Card de Depoimento 3 -->
+                        <div class="testimonial-card bg-white rounded-xl shadow-lg p-6 flex flex-col gap-4 border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                            <!-- Conteúdo... -->
+                            <div class="flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-pink-100 text-pink-700 flex items-center justify-center font-bold text-xl"><span>AP</span></div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-800">Ana Paula</h4>
+                                    <p class="text-sm text-gray-500">10 de Junho, 2025</p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <div class="flex text-yellow-500">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/></svg>
+                                </div>
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" class="text-green-500"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+                            </div>
+                            <p class="testimonial-text testimonial-text-clamp text-gray-600 leading-relaxed">"Senti uma confiança enorme na Marilia. Ela entendeu exatamente o que eu buscava e o resultado da harmonização ficou incrível!"</p>
+                            <a href="#" class="read-more-btn text-brand-brown font-semibold hover:underline mt-auto">Leia mais</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="atendimento" class="overlay-section py-16 md:py-24 sm:px-8 lg:px-16">
+                <div class="container mx-auto">
+                    <h2 class="section-title text-gray-800">Unidades de Atendimento</h2>
+                    <div class="grid md:grid-cols-2 gap-4 md:gap-8 relative">
+                        <div class="text-center p-6 md:-mr-4"> <p class="text-gray-800">Instituto Bahmad - Nutrição e Bem Estar</p>
+                            <p class="text-sm text-gray-700 mb-3">Endereço completo aqui, Goiânia - GO</p>
+                            <a href="https://www.google.com.br/maps/place/Bahmad+-+Centro+de+Nutri%C3%A7%C3%A3o+e+Bem+Estar/@-16.7067745,-49.3190723,12z/data=!4m6!3m5!1s0x935ef1f833f1abad:0xff050218e72f0ced!8m2!3d-16.7067745!4d-49.2366748!16s%2Fg%2F11j65ts2dv?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                                GOIÂNIA
+                            </a>
+                        </div>
+
+                        <div class="md:absolute md:inset-y-0 md:left-1/2 md:-translate-x-1/2 md:w-px md:h-full md:bg-gray-600 hidden md:flex items-center justify-center">
+                        </div>
+
+                        <div class="text-center p-6">
+                            <p class="text-gray-800">Marilia Carvalho Centro Estética</p>
+                            <p class="text-sm text-gray-700 mb-3">Endereço completo aqui, São Miguel do Passa Quatro - GO</p>
+                            <a href="https://www.google.com.br/maps/place/Mar%C3%ADlia+Carvalho,+Centro+de+Est%C3%A9tica+Avan%C3%A7ado./@-17.0582241,-48.6842703,14z/data=!4m6!3m5!1s0x9358cb5addc07bc9:0xb1bb6b6c38ca7256!8m2!3d-17.0582241!4d-48.6636709!16s%2Fg%2F11w1x2rb0w?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                                SÃO MIGUEL DO PASSA QUATRO
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contato" class="overlay-section py-12 md:py-16 ">
+                <div class="flex flex-col lg:flex-row items-center card card-wtsp px-16 p-6 lg:max-w-5xl mx-auto shadow-lg overflow-hidden rounded-2xl">
+
+                    <div class="flex flex-col justify-center text-center lg:text-left flex-grow">
+                        <h2 class="text-white text-2xl md:text-3xl font-bold mb-4">Agende já sua consulta!</h2>
+                        <p class="text-white text-base md:text-lg max-w-xl lg:mx-0 mx-auto">
+                            Entre em contato para tirar suas dúvidas e dar
+                        </p>
+                        <p class="text-white text-base md:text-lg mb-6 max-w-xl lg:mx-0 mx-auto">
+                            o primeiro passo para realçar sua beleza e bem-estar.
+                        </p>
+                        <div class="flex justify-center lg:justify-start">
+                            <a href="https://wa.me/5562994479641" target="_blank" class="bg-green-500 text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center text-base md:text-lg shadow-lg hover:bg-green-600 transform hover:scale-105 transition-all duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-whatsapp mr-2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                                AGENDAR PELO WHATSAPP
+                            </a>
+                        </div>
+                    </div>
+
+                    <div id="agende-consulta-img-container" class="mt-8 lg:mt-0 lg:ml-8 flex-shrink-0 w-full lg:w-auto lg:max-w-sm">
+                        <img src="https://placehold.co/340x350/9D7B7B/FFFFFF?text=Imagem" alt="Imagem Procedimento" class="w-full rounded-lg">
+                    </div>
+                </div>
+            </section>
+        </main>
+    <footer class="btn-primary text-gray-300 py-16">
+        <div class="px-16 container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <a href="index.html">
+                    <img src="/MARCA D_ÁGUA/MD03.png" alt="Logo Marilia Carvalho Rodapé">
+                </a>
+            </div>
+            <div class="md:ml-10">
+                <h4 class="text-lg font-semibold text-white mb-3">LOCAIS DE ATENDIMENTO</h4>
+                <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Instituto Bahmad - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
+                <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
+            </div>
+            <div class="md:text-right"> 
+                <div class="inline-block text-center"> 
+                    <h4 class="font-semibold text-white mb-3">REDES SOCIAIS</h4>
+                    <div class="flex justify-center space-x-4"> 
+                        <a href="https://ig.me/m/dra.marilliacarvalho" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://wa.me/5562994479641" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+            <p>&copy; <span id="currentYear"></span> Marilia Carvalho. Todos os direitos reservados.</p>
+            <p>Desenvolvido com <span class="text-red-500">&hearts;</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // Script para o ano atual no rodapé
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Script para menu mobile
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.remove('-translate-x-full');
+            mobileMenu.classList.add('translate-x-0');
+        });
+
+        const closeMenu = () => {
+            mobileMenu.classList.add('-translate-x-full');
+            mobileMenu.classList.remove('translate-x-0');
+            setTimeout(() => {
+                mobileMenu.classList.add('hidden');
+            }, 300);
+        }
+        closeMenuBtn.addEventListener('click', closeMenu);
+
+        // Fechar menu ao clicar em um link para outra página ou âncora
+        const allNavLinks = mobileMenu.querySelectorAll('a');
+        allNavLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                // Adiciona um pequeno delay para garantir que o scroll ou navegação ocorra antes de fechar
+                setTimeout(() => {
+                    closeMenu();
+                }, 100);
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const track = document.querySelector('.carousel-3d-track');
+            if (!track) return; // Sai se o carrossel não existir
+
+            const slides = Array.from(track.children);
+            const nextButton = document.getElementById('next-btn');
+            const prevButton = document.getElementById('prev-btn');
+
+            let currentIndex = 0;
+            const slideCount = slides.length;
+
+            const updateCarousel = () => {
+                slides.forEach((slide, index) => {
+                    let transform = '';
+                    let opacity = 0;
+                    let zIndex = 1;
+                    let scale = 0.8; // Default scale for inactive slides
+
+                    // Determine if slide is active, prev, or next
+                    const dist = index - currentIndex;
+
+                    if (dist === 0) { // Active slide
+                        transform = 'translateZ(0) scale(1)';
+                        opacity = 1;
+                        zIndex = 10;
+                        scale = 1;
+                        slide.classList.add('active');
+                        slide.classList.remove('prev', 'next');
+                    } else if (dist === -1 || (dist === slideCount - 1 && currentIndex === 0)) { // Previous slide
+                        transform = 'translateX(-45%) translateZ(-150px) rotateY(35deg) scale(0.8)';
+                        opacity = 0.5;
+                        zIndex = 5;
+                        slide.classList.add('prev');
+                        slide.classList.remove('active', 'next');
+                    } else if (dist === 1 || (dist === -(slideCount - 1) && currentIndex === slideCount - 1)) { // Next slide
+                        transform = 'translateX(45%) translateZ(-150px) rotateY(-35deg) scale(0.8)';
+                        opacity = 0.5;
+                        zIndex = 5;
+                        slide.classList.add('next');
+                        slide.classList.remove('active', 'prev');
+                    } else { // Other slides (further away)
+                        // Hide slides that are too far
+                        opacity = 0;
+                        zIndex = 1;
+                        slide.classList.remove('active', 'prev', 'next');
+                    }
+
+                    slide.style.transform = transform;
+                    slide.style.opacity = opacity;
+                    slide.style.zIndex = zIndex;
+                    
+                    // Add/remove classes to help with CSS transitions if needed
+                });
+            };
+
+            const goToNext = () => {
+                currentIndex = (currentIndex + 1) % slideCount;
+                updateCarousel();
+            };
+
+            const goToPrev = () => {
+                currentIndex = (currentIndex - 1 + slideCount) % slideCount;
+                updateCarousel();
+            };
+
+            nextButton.addEventListener('click', goToNext);
+            prevButton.addEventListener('click', goToPrev);
+
+            // Initial setup
+            updateCarousel();
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+            testimonialCards.forEach(card => {
+                const textElement = card.querySelector('.testimonial-text');
+                const readMoreBtn = card.querySelector('.read-more-btn');
+
+                if (!textElement || !readMoreBtn) return;
+
+                // Verifica se o texto realmente precisa do botão "Leia mais"
+                // Compara a altura total do conteúdo (scrollHeight) com a altura visível (clientHeight)
+                const isClamped = textElement.scrollHeight > textElement.clientHeight;
+
+                // Se não precisar, esconde o botão
+                if (!isClamped) {
+                    readMoreBtn.style.display = 'none';
+                }
+
+                // Adiciona o evento de clique
+                readMoreBtn.addEventListener('click', (e) => {
+                    e.preventDefault(); // Impede que o link mude a URL da página
+                    
+                    // Alterna a classe que expande/contrai o texto
+                    textElement.classList.toggle('testimonial-text-clamp');
+                    textElement.classList.toggle('testimonial-text-expanded');
+
+                    // Muda o texto do botão
+                    if (textElement.classList.contains('testimonial-text-expanded')) {
+                        readMoreBtn.textContent = 'Leia menos';
+                    } else {
+                        readMoreBtn.textContent = 'Leia mais';
+                    }
+                });
+            });
+        });
+
+        const lenis = new Lenis({
+            duration: 1.2, // Duração da animação de rolagem (em segundos)
+            easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // Função de suavização
+            smoothTouch: true, // Habilita a rolagem suave em dispositivos de toque
+        });
+
+        function raf(time) {
+            lenis.raf(time);
+            requestAnimationFrame(raf);
+        }
+
+        requestAnimationFrame(raf);
+    </script>
+</body>
+</html>

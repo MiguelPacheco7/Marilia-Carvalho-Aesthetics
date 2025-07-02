@@ -1,0 +1,21 @@
+O projeto está na pasta "Projeto". Acrescentei duas versões, uma em .sketch e outra em .fig para que você possa abrir o projeto como preferir.
+
+Para abrir o projeto no Sketch (apenas para macOS):
+- Instale as fontes que estão na pasta "Fontes"
+- Instale o Sketch no link: https://www.sketch.com/
+- Abrir o Sketch
+- Clicar em "Arquivo > Abrir projeto"
+- Selecionar o arquivo "marilia.sketch"
+- Clicar em "Abrir"
+
+Para abrir o projeto no Figma:
+- Instale as fontes que estão na pasta "Fontes"
+- Instale o figma no link: https://www.figma.com/
+- Abrir o figma
+- Clicar em "Arquivo > Abrir projeto"
+- Selecionar o arquivo "marilia.fig"
+- Clicar em "Abrir"
+
+Para converter arquivos:
+- Se precisar converter um arquivo .fig para .sketch, pode usar o utilitário fig2sketch que deixei na pasta "Utilitários".
+- Se precisar converter um arquivo .sketch para .fig, pode simplesmente arrastar o arquivo .sketch para o figma.
