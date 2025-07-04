@@ -15,7 +15,6 @@
                 font-family: 'Inter', sans-serif;
                 scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
                 background: linear-gradient(to bottom right, #F5F5F5, #FAEBF1);
-                min-height: 100vh
             }
 
             .floating-header {
@@ -32,6 +31,38 @@
                 transition: top 0.3s ease-in-out;
                 box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
             }
+
+            .bg-img{
+                background-image: url(/Assets/001\ 1.png);
+            }
+
+            /* Oculta os DIVS dos containers por padrão em telas pequenas (celulares) */
+            #quem-sou-eu-img-container,
+            #agende-consulta-img-container {
+                display: none !important;
+            }
+
+            /* Mostra os DIVS dos containers em telas com largura de 768px ou mais (desktop) */
+            @media (min-width: 768px) {
+                #quem-sou-eu-img-container,
+                #agende-consulta-img-container {
+                    display: flex !important; /* Usamos 'flex' porque o div já tem 'flex justify-center' */
+                }
+            }
+
+            .text-color {
+                color: #8F6B6B;
+            }
+
+            .color-subtitle {
+                color: #1F2937;
+            }
+
+            .bt-color {
+                background-color: #51648C;
+                color: white;
+            }
+
             .brand-brown {
                 color: #3A2B1E; /* Custom brown color for branding */
             }
@@ -91,7 +122,7 @@
             .carousel-3d {
                 position: relative;
                 width: 100%;
-                height: 400px; /* Altura do carrossel */
+                height: 400px; /* Altura do carrossel padrão */
                 perspective: 1500px; /* Efeito de profundidade */
                 transform-style: preserve-3d;
             }
@@ -110,7 +141,7 @@
                 left: 0;
                 right: 0;
                 margin: auto;
-                width: 60%; /* Largura do slide principal */
+                width: 60%; /* Largura do slide principal padrão */
                 height: 100%;
                 border-radius: 1rem;
                 overflow: hidden;
@@ -176,6 +207,43 @@
             #next-btn {
                 right: 10px;
             }
+
+            /* Media Queries para Responsividade do Carrossel */
+            /* Celulares (até 639px) */
+            @media (max-width: 639px) {
+                .carousel-3d {
+                    height: 250px; /* Altura menor para celulares */
+                }
+                .carousel-3d-slide {
+                    width: 80%; /* Largura maior para celulares */
+                }
+                .carousel-3d-slide.prev {
+                    transform: translateX(-35%) translateZ(-80px) rotateY(25deg) scale(0.9);
+                }
+                .carousel-3d-slide.next {
+                    transform: translateX(35%) translateZ(-80px) rotateY(-25deg) scale(0.9);
+                }
+                .carousel-nav-btn {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
+
+            /* Tablets (de 640px a 767px) */
+            @media (min-width: 640px) and (max-width: 767px) {
+                .carousel-3d {
+                    height: 350px; /* Altura média para tablets */
+                }
+                .carousel-3d-slide {
+                    width: 70%; /* Largura média para tablets */
+                }
+                .carousel-3d-slide.prev {
+                    transform: translateX(-40%) translateZ(-120px) rotateY(30deg) scale(0.85);
+                }
+                .carousel-3d-slide.next {
+                    transform: translateX(40%) translateZ(-120px) rotateY(-30deg) scale(0.85);
+                }
+            }
         </style>
     </head>
 
@@ -238,72 +306,91 @@
         </header>
 
         <main>
-            <section class="py-12 md:py-20 px-6 text-center bg-home">
+            <section class="py-12 md:py-20 px-6 text-center bg-img">
                 <div class="container mx-auto">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-brown mb-4">Conheça a Marilia</h1>
-                    <p class="text-md sm:text-lg text-gray-900 max-w-2xl mx-auto">
-                        Uma jornada dedicada à arte de realçar sua beleza natural com paixão, precisão e cuidado individualizado.
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold color-subtitle mb-4">Conheça a Dra. Maríllia Carvalho</h1>
+                    <p class="text-md sm:text-lg color-subtitle max-w-2xl mx-auto">
+                        Uma jornada construída com propósito: valorizar o que você tem de mais único — sua beleza — com técnica, sensibilidade e dedicação em cada detalhe.
                     </p>
                 </div>
             </section>
 
-            <section id="sobre-mim" class="mr-[75px] py-16 md:py-24 px-6">
+            <section id="sobre-mim" class="md:mr-[75px] py-16 md:py-24 px-6">
                 <div class="container mx-auto">
                     <div class="grid md:grid-cols-2 gap-12 items-center">
                         <div class="order-1 md:order-1 flex justify-center">
-                            <img src="https://placehold.co/400x400/9D7B7B/FFFFFF?text=Foto+Aqui&font=inter" 
+                            <img src="/Novas fotos/IMG_5111 3.png" 
                                 alt="[Foto da profissional Marilia Carvalho]" 
                                 class="profile-image shadow-xl w-full max-w-sm"
                                 onerror="this.onerror=null; this.src='https://placehold.co/400x400/cccccc/333333?text=Imagem+Indisponível';">
                         </div>
                         <div class="order-2 md:order-2 text-center md:text-left">
-                            <h2 class="text-2xl md:text-3xl font-semibold text-brand-brown mb-6">Olá, sou Marilia Carvalho!</h2>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Bem-vindo(a) ao meu espaço! Sou especialista em harmonização facial e corporal, com uma paixão por transformar vidas através da estética avançada. Minha missão é realçar a beleza única de cada pessoa, promovendo bem-estar e autoestima com tratamentos personalizados e resultados naturais.
+                            <h2 class="text-2xl md:text-3xl font-semibold color-subtitle mb-6">Olá, sou a Dra. Maríllia Carvalho!</h2>
+                            <p class="color-subtitle mb-4 leading-relaxed">
+                                Especialista em harmonização facial e corporal, 
+                                encontrei na estética uma forma de transformar vidas com leveza, precisão e verdade.
                             </p>
-                            <p class="text-gray-600 mb-4 leading-relaxed">
-                                Acredito que a verdadeira beleza vem de dentro, e meu trabalho é um reflexo do cuidado e da dedicação que tenho por cada paciente. Utilizo as técnicas mais modernas e seguras, sempre em busca da excelência e da sua satisfação.
+                            <p class="color-subtitle mb-4 leading-relaxed">
+                                Mais do que cuidar da aparência, minha missão é oferecer experiências que promovam 
+                                bem-estar, segurança e autoestima duradoura.
                             </p>
-                            <p class="text-gray-600 mb-6 leading-relaxed">
-                                Aqui, você encontrará um atendimento humanizado, focado em suas necessidades e desejos, para que juntos possamos alcançar a melhor versão de você.
+                            <p class="color-subtitle mb-4 leading-relaxed">
+                                Cada paciente que passa por aqui recebe um olhar atento, 
+                                escuta ativa e um plano exclusivo — porque acredito que o cuidado estético deve ser tão único quanto você.
                             </p>
-                            <a href="https://ig.me/m/YOURUSERNAME" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <p class="color-subtitle mb-4 leading-relaxed">
+                                Com protocolos modernos, técnicas seguras e uma atuação ética e acolhedora, 
+                                entrego resultados que respeitam sua essência e valorizam sua beleza real.
+                            </p>
+                            <p class="color-subtitle mb-6 leading-relaxed">
+                                Este é o seu espaço. Um lugar onde ciência e estética caminham juntas para revelar 
+                                a sua melhor versão — com confiança, equilíbrio e naturalidade.
+                            </p>
+                            <a href="https://ig.me/m/dra.marilliacarvalho" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
                                 Conheça mais
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                             </a>
                         </div>
                     </div>
                 </div>
             </section>
 
-            <section class="py-16 md:py-24 px-16">
+            <section class="py-16 md:py-24 px-6">
                 <div class="container mx-auto">
-                    <h2 class="text-3xl font-semibold text-brand-brown mb-12 text-center">Minha Filosofia de Trabalho</h2>
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-8 text-center">Minha Filosofia de Trabalho</h2>
+
+                    <p class="text-md sm:text-lg color-subtitle mx-auto text-center font-bold mb-3">
+                        Cuidar de cada paciente como único. Valorizar o que há de mais belo em você — com técnica, sensibilidade e propósito.
+                    </p>
+
                     <div class="grid md:grid-cols-3 gap-8">
                         <div class="content-section text-center hover:shadow-xl transition-shadow duration-300">
                             <div class="p-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-handshake mx-auto mb-4 text-brand-brown"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.82 2.94 0l2.94-2.94v0c.82-.82.82-2.13 0-2.94L12 5Z"/></svg>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Atendimento Personalizado</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">
-                                    Cada paciente é único. Dedico tempo para entender suas metas e necessidades, criando planos de tratamento sob medida.
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-red-500 lucide lucide-heart-handshake mx-auto mb-4 text-brand-brown"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08v0c.82.82 2.13.82 2.94 0l2.94-2.94v0c.82-.82.82-2.13 0-2.94L12 5Z"/></svg>
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Naturalidade acima de tudo</h3>
+                                <p class="color-subtitle text-sm leading-relaxed">
+                                    Não acredito em padrões, acredito em harmonia.
+                                    Meu compromisso é realçar sua beleza de forma elegante e sutil — com resultados que 
+                                    rejuvenescem, mas que continuam sendo você, só que na sua melhor versão.
                                 </p>
                             </div>
                         </div>
                         <div class="content-section text-center hover:shadow-xl transition-shadow duration-300">
                             <div class="p-4">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles mx-auto mb-4 text-brand-brown"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Resultados Naturais</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">
-                                    Busco realçar sua beleza de forma sutil e elegante, preservando sua identidade e proporcionando resultados que rejuvenescem com naturalidade.
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-gray-900 lucide lucide-sparkles mx-auto mb-4 text-brand-brown"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/><path d="M5 3v4"/><path d="M19 17v4"/><path d="M3 5h4"/><path d="M17 19h4"/></svg>
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Beleza com intenção</h3>
+                                <p class="color-subtitle text-sm leading-relaxed">
+                                    Para mim, estética vai além da aparência: é sobre sentir-se bem, segura e confiante em sua própria pele.
+                                    Cada detalhe do meu trabalho é pensado para entregar mais do que resultados visíveis — mas uma experiência de cuidado real e transformadora.
                                 </p>
                             </div>
                         </div>
                         <div class="content-section text-center hover:shadow-xl transition-shadow duration-300">
                             <div class="p-4">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check mx-auto mb-4 text-brand-brown"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
-                                <h3 class="text-xl font-semibold text-gray-800 mb-2">Segurança e Qualidade</h3>
-                                <p class="text-gray-600 text-sm leading-relaxed">
-                                    Utilizo produtos de alta qualidade e técnicas comprovadas, priorizando sempre a sua segurança e bem-estar em cada procedimento.
+                            <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-green-500 lucide lucide-shield-check mx-auto mb-4 text-brand-brown"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/><path d="m9 12 2 2 4-4"/></svg>
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Excelência com segurança</h3>
+                                <p class="color-subtitle text-sm leading-relaxed">
+                                    Trabalho apenas com produtos de alta performance e técnicas validadas pela ciência e pela prática clínica.
+                                    Aqui, você encontra segurança, ética e acolhimento em cada etapa do processo — do primeiro contato ao pós-procedimento.
                                 </p>
                             </div>
                         </div>
@@ -313,27 +400,31 @@
 
             <section class="py-16 md:py-24 px-6">
                 <div class="container mx-auto text-center">
-                    <h2 class="text-3xl font-semibold text-brand-brown mb-4">Minha Trajetória</h2>
-                    <p class="text-gray-700 max-w-2xl mx-auto mb-8">
-                        Com anos de estudo e dedicação, busco constantemente o aperfeiçoamento profissional para oferecer o que há de melhor e mais atual na área da estética avançada.
+                    <h2 class="text-3xl font-semibold text-gray-800 mb-4">Minha Trajetória</h2>
+                    <p class="color-subtitle max-w-2xl mx-auto mb-6">
+                        Ciência, sensibilidade e propósito: uma jornada dedicada à estética que transforma, respeita e valoriza.
+                    </p>
+                    <p class="color-subtitle max-w-2xl mx-auto mb-8">
+                        Com 7 anos de experiência na área da saúde e estética, minha trajetória é construída com estudo contínuo, 
+                        amor pelo cuidado e o compromisso de oferecer o que há de mais seguro, moderno e eficaz para quem confia em mim.
                     </p>
                     <div class="max-w-3xl mx-auto bg-white p-8 md:p-10 rounded-xl shadow-lg">
-                        <ul class="space-y-4 text-left text-gray-600">
+                        <ul class="space-y-4 text-left color-subtitle">
                             <li class="flex items-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-graduation-cap mr-3 mt-1 text-brand-brown flex-shrink-0"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
-                                <span><strong>Formação Acadêmica:</strong> [Sua Formação Principal - Ex: Graduada em Biomedicina Estética pela Universidade XYZ]</span>
+                                <span><strong>Formação Acadêmica:</strong> Graduanda em Biomedicina – Universidade Estácio de Sá Graduada em Enfermagem – Pontifícia Universidade Católica de Goiás (PUC-GO)</span>
                             </li>
                             <li class="flex items-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award mr-3 mt-1 text-brand-brown flex-shrink-0"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/></svg>
-                                <span><strong>Especializações:</strong> [Suas Especializações - Ex: Pós-graduação em Harmonização Orofacial, Cursos Avançados em Toxina Botulínica e Preenchedores]</span>
+                                <span><strong>Especializações:</strong> Pós-graduada em Saúde Pública Pós-graduada em Saúde Estética Especialista em Estética Ortomolecular</span>
                             </li>
                             <li class="flex items-start">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star mr-3 mt-1 text-brand-brown flex-shrink-0"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-                                <span><strong>Experiência:</strong> [Seus Anos de Experiência ou Destaques - Ex: Mais de X anos de experiência transformando sorrisos e realçando a beleza natural.]</span>
+                                <span><strong>Experiência e Propósito:</strong> 7 anos transformando sorrisos, elevando autoestima e realçando a beleza natural de cada paciente. Atendimento humanizado, com foco em resultados seguros, personalizados e que respeitam sua identidade.</span>
                             </li>
                             <li class="flex items-start">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-check mr-3 mt-1 text-brand-brown flex-shrink-0"><path d="M8 3H2v15h7c1.7 0 3 1.3 3 3V7c0-2.2-1.8-4-4-4Z"/><path d="m16 12 2 2 4-4"/><path d="M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3"/></svg>
-                                <span><strong>Atualização Contínua:</strong> Participação frequente em congressos e workshops para trazer as últimas inovações para você.</span>
+                                <svg xmlns="http://www.w3.org/2000/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-open-check mr-3 mt-1 text-brand-brown flex-shrink-0"><path d="M8 3H2v15h7c1.7 0 3 1.3 3 3V7c0-2.2-1.8-4-4-4Z"/><path d="m16 12 2 2 4-4"/><path d="M22 6V3h-6c-2.2 0-4 1.8-4 4v14c0-1.7 1.3-3 3-3h7v-2.3"/></svg>
+                                <span><strong>Atualização Contínua:</strong> Participo ativamente de congressos, cursos e workshops, porque acredito que quem cuida do outro precisa estar em constante evolução.</span>
                             </li>
                         </ul>
                     </div>
@@ -344,11 +435,13 @@
                 <div class="carousel-3d-container">
                     <div class="carousel-3d">
                         <div class="carousel-3d-track">
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/9D7B7B/FFFFFF?text=Imagem+1" alt="[Imagem de congresso 1]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/374151/FFFFFF?text=Imagem+2" alt="[Imagem de procedimento 2]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/6B6B6B/FFFFFF?text=Imagem+3" alt="[Imagem da equipe 3]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/3A2B1E/FFFFFF?text=Imagem+4" alt="[Imagem da clínica 4]"></div>
-                            <div class="carousel-3d-slide"><img src="https://placehold.co/800x600/BF9B8E/FFFFFF?text=Imagem+5" alt="[Imagem de evento 5]"></div>
+                            <div class="carousel-3d-slide"><img src="/Novas fotos/d873994d-5f9d-4320-89f7-8d10824925fd.JPG" alt="[Imagem de congresso 1]"></div>
+                            <div class="carousel-3d-slide"><img src="/Novas fotos/F9C11A55-E657-4E5C-9AC6-DB18AFFA7BA0 (1).JPG" alt="[Imagem de procedimento 2]"></div>
+                            <div class="carousel-3d-slide"><img src="/Novas fotos/IMG_5112.JPG" alt="[Imagem da clínica 3]"></div>
+                            <div class="carousel-3d-slide"><img src="/Novas fotos/IMG_5113.JPG" alt="[Imagem de evento 4]"></div>
+                            <div class="carousel-3d-slide"><img src="/Novas fotos/IMG_5114.JPG" alt="[Imagem de evento 5]"></div>
+                            <div class="carousel-3d-slide"><img src="/Novas fotos/IMG_5116.JPG" alt="[Imagem de evento 6]"></div>
+                            <div class="carousel-3d-slide"><img src="/Novas fotos/IMG_5117.JPG" alt="[Imagem de evento 7]"></div>
                         </div>
                     </div>
                     <button id="prev-btn" class="carousel-nav-btn">
@@ -362,14 +455,14 @@
 
         </main>
 
-        <footer class="btn-primary-footer text-gray-300 py-16">
+        <footer class="btn-primary text-gray-300 py-16">
             <div class="px-16 container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
                 <div>
                     <a href="index.html">
                         <img src="/MARCA D_ÁGUA/MD03.png" alt="Logo Marilia Carvalho Rodapé">
                     </a>
                 </div>
-                <div class="ml-10">
+                <div class="md:ml-10">
                     <h4 class="text-lg font-semibold text-white mb-3">LOCAIS DE ATENDIMENTO</h4>
                     <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Instituto Bahmad - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
                     <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
@@ -378,10 +471,10 @@
                     <div class="inline-block text-center"> 
                         <h4 class="font-semibold text-white mb-3">REDES SOCIAIS</h4>
                         <div class="flex justify-center space-x-4"> 
-                            <a href="https://ig.me/m/YOURUSERNAME" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                            <a href="https://ig.me/m/dra.marilliacarvalho" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                             </a>
-                            <a href="https://wa.me/5531987654321" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
+                            <a href="https://wa.me/5562994479641" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
                                 </svg>
@@ -460,13 +553,29 @@
                             slide.classList.add('active');
                             slide.classList.remove('prev', 'next');
                         } else if (dist === -1 || (dist === slideCount - 1 && currentIndex === 0)) { // Previous slide
-                            transform = 'translateX(-45%) translateZ(-150px) rotateY(35deg) scale(0.8)';
+                            // Adicionado para responsividade
+                            const currentWidth = window.innerWidth;
+                            if (currentWidth <= 639) { // Celulares
+                                transform = 'translateX(-35%) translateZ(-80px) rotateY(25deg) scale(0.9)';
+                            } else if (currentWidth >= 640 && currentWidth <= 767) { // Tablets
+                                transform = 'translateX(-40%) translateZ(-120px) rotateY(30deg) scale(0.85)';
+                            } else { // Desktop
+                                transform = 'translateX(-45%) translateZ(-150px) rotateY(35deg) scale(0.8)';
+                            }
                             opacity = 0.5;
                             zIndex = 5;
                             slide.classList.add('prev');
                             slide.classList.remove('active', 'next');
                         } else if (dist === 1 || (dist === -(slideCount - 1) && currentIndex === slideCount - 1)) { // Next slide
-                            transform = 'translateX(45%) translateZ(-150px) rotateY(-35deg) scale(0.8)';
+                            // Adicionado para responsividade
+                            const currentWidth = window.innerWidth;
+                            if (currentWidth <= 639) { // Celulares
+                                transform = 'translateX(35%) translateZ(-80px) rotateY(-25deg) scale(0.9)';
+                            } else if (currentWidth >= 640 && currentWidth <= 767) { // Tablets
+                                transform = 'translateX(40%) translateZ(-120px) rotateY(-30deg) scale(0.85)';
+                            } else { // Desktop
+                                transform = 'translateX(45%) translateZ(-150px) rotateY(-35deg) scale(0.8)';
+                            }
                             opacity = 0.5;
                             zIndex = 5;
                             slide.classList.add('next');
@@ -499,8 +608,9 @@
                 nextButton.addEventListener('click', goToNext);
                 prevButton.addEventListener('click', goToPrev);
 
-                // Initial setup
+                // Initial setup and update on window resize
                 updateCarousel();
+                window.addEventListener('resize', updateCarousel);
             });
 
             document.addEventListener('DOMContentLoaded', () => {
