@@ -347,8 +347,8 @@
         }
     </style>
 </head>
-<body class="bg-second-third-sec overflow-x-hidden">
-    <section class="bg-first-sec">
+<body class="bg-first-sec overflow-x-hidden">
+
         <header class="bg-white/80 backdrop-blur-sm floating-header top-[10px]">
             <div class="container mx-auto flex justify-between items-center py-3 px-4">
                 <a href="/" class="flex items-center text-2xl font-bold text-gray-700">
@@ -404,10 +404,10 @@
                 </div>
             </div>
         </header>
-    </section>
+
         <main>
-            <section class="bg-first-sec ">
-                <div class="absolute inset-0 bg-black/30"></div>
+            <section class="bg-first-sec">
+                <div class="block md:hidden absolute inset-0 bg-black/30"></div>
                 <div class="md:hidden flex flex-col justify-end min-h-screen relative overflow-hidden text-center text-white p-4">
                     <div class="absolute inset-0" style="background-image: url('/New Photos/1000055078-removebg-preview.png'); background-size: cover; background-position: bottom; background-repeat: no-repeat;">
                         <div class="absolute inset-0 bg-black/30"></div>
@@ -456,8 +456,9 @@
                 </div>
             </section>
 
-            <section id="sobre" class="mt-16 flex items-center">
-                <div class="min-h-[80vh] md:mr-[75px] container mx-auto">
+            <div class="bg-second-third-sec">
+            <section id="sobre" class="flex items-center">
+                <div class="min-h-[80vh] md:mr-[75px] container mt-16 mx-auto">
                     <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                         <div class="order-2 md:order-1 flex justify-center">
                             <img src="/New Photos/SAVE_20250820_153606.jpg" alt="Imagem de tratamento facial" class="rounded-xl shadow-gray-400/50 shadow-lg w-3/4 max-w-xs h-auto">
@@ -657,6 +658,7 @@
                     </div>
                 </div>
             </section>
+            </div>
         </main>
     <footer class="btn-primary text-gray-300 py-16">
         <div class="px-16 container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
