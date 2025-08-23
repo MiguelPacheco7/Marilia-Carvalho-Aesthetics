@@ -13,7 +13,6 @@
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-image: url('/Assets/Web 1920 – 10.jpg');
             background-attachment: scroll;
             background-size: cover;
             background-repeat: no-repeat;
@@ -33,6 +32,14 @@
             z-index: 100; /* Z-index alto para ficar acima de tudo */
             transition: top 0.3s ease-in-out;
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+        }
+
+        .bg-first-sec {
+            background-color: rgba(222, 202, 196);
+        }
+
+        .bg-second-third-sec {
+            background-color: #F5F5F5;
         }
 
         /* Oculta os DIVS dos containers por padrão em telas pequenas (celulares) */
@@ -340,75 +347,80 @@
         }
     </style>
 </head>
-<body>
-
-    <header class="bg-white/80 backdrop-blur-sm floating-header">
-        <div class="container mx-auto flex justify-between items-center py-3 px-4">
-            <a href="/" class="flex items-center text-2xl font-bold text-gray-700">
-                <img src="/MARCA D_ÁGUA/MD04.png" alt="Logo Marilia Carvalho" class="h-7 md:h-9">
-            </a>
-
-            <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
-                <a href="index.html" class="text-brand-brown font-semibold transition-colors">Início</a>
-                <a href="quem-sou-eu.html" class="text-gray-600 hover:text-brand-brown transition-colors">Quem Sou Eu</a>
-                <a href="tratamentos.html" class="text-gray-600 hover:text-brand-brown transition-colors">Tratamentos</a>
-                <a href="index.html#contato" class="text-gray-600 hover:text-brand-brown transition-colors">Contato</a>
-            </nav>
-
-            <div class="hidden md:flex items-center space-x-4">
-                <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+<body class="bg-second-third-sec overflow-x-hidden">
+    <section class="bg-first-sec">
+        <header class="bg-white/80 backdrop-blur-sm floating-header top-[10px]">
+            <div class="container mx-auto flex justify-between items-center py-3 px-4">
+                <a href="/" class="flex items-center text-2xl font-bold text-gray-700">
+                    <img src="/MARCA D_ÁGUA/MD04.png" alt="Logo Marilia Carvalho" class="h-7 md:h-9">
                 </a>
-                <a href="https://wa.me/5562994479641" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="WhatsApp">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-                        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
-                    </svg>
-                </a>
-            </div>
 
-            <div class="md:hidden">
-                <button id="menu-btn" class="text-gray-600 hover:text-brand-brown focus:outline-none">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-                </button>
-            </div>
-        </div>
-
-        <div id="mobile-menu" class="md:hidden hidden fixed inset-0 bg-white z-40 pt-16 transform -translate-x-full">
-            <button id="close-menu-btn" class="absolute top-6 right-6 text-gray-600 hover:text-brand-brown focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
-            </button>
-            <div class="bg-white container mx-auto px-6 py-4">
-                <nav class="flex flex-col space-y-6 text-center mt-8">
-                    <a href="index.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Início</a>
-                    <a href="quem-sou-eu.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Quem Sou Eu</a>
-                    <a href="tratamentos.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Tratamentos</a>
-                    <a href="index.html#contato" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Contato</a>
+                <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
+                    <a href="index.html" class="text-brand-brown font-semibold transition-colors">Início</a>
+                    <a href="quem-sou-eu.html" class="text-gray-600 hover:text-brand-brown transition-colors">Quem Sou Eu</a>
+                    <a href="tratamentos.html" class="text-gray-600 hover:text-brand-brown transition-colors">Tratamentos</a>
+                    <a href="index.html#contato" class="text-gray-600 hover:text-brand-brown transition-colors">Contato</a>
                 </nav>
-                <div class="flex justify-center space-x-6 mt-10">
+
+                <div class="hidden md:flex items-center space-x-4">
                     <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                     </a>
                     <a href="https://wa.me/5562994479641" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="WhatsApp">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
                             <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
                         </svg>
                     </a>
                 </div>
-            </div>
-        </div>
-    </header>
 
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-gray-600 hover:text-brand-brown focus:outline-none">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden fixed inset-0 bg-white z-40 pt-16 transform -translate-x-full">
+                <button id="close-menu-btn" class="absolute top-6 right-6 text-gray-600 hover:text-brand-brown focus:outline-none">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+                </button>
+                <div class="bg-white container mx-auto px-6 py-4">
+                    <nav class="flex flex-col space-y-6 text-center mt-8">
+                        <a href="index.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Início</a>
+                        <a href="quem-sou-eu.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Quem Sou Eu</a>
+                        <a href="tratamentos.html" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Tratamentos</a>
+                        <a href="index.html#contato" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Contato</a>
+                    </nav>
+                    <div class="flex justify-center space-x-6 mt-10">
+                        <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                        </a>
+                        <a href="https://wa.me/5562994479641" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" viewBox="0 0 16 16">
+                                <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </section>
         <main>
-            <section class="mt-[60px] ml-0 mr-0 md:ml-[131px]">
-                <div class="container mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
-                    <div class="text-center md:text-left px-4">
-                        <h1 class="text-4xl md:text-5xl font-bold color-subtitle mb-4 md:mb-6 leading-tight">
-                            Especialista em <span class="text-brand-brown">harmonização facial e corporal</span>
+            <section class="bg-first-sec relative">
+
+                <div class="md:hidden flex flex-col justify-end min-h-screen relative overflow-hidden text-center text-white p-4">
+                    <div class="absolute inset-0" style="background-image: url('/New Photos/1000055078-removebg-preview.png'); background-size: cover; background-position: bottom; background-repeat: no-repeat;">
+                        <div class="absolute inset-0" style="background-color: rgba(222, 202, 196, 0.7);"></div>
+                    </div>
+
+                    <div class="relative z-10 py-28 color-subtitle">
+                        <h1 class="text-4xl font-bold mb-4 leading-tight">
+                            Especialista em <span class="color-subtitle">harmonização facial e corporal</span>
                         </h1>
-                        <p class="text-lg color-subtitle mb-6 md:mb-8">
-                            Cuidando do seu bem-estar com dedicação e excelência. 
-                            Cada procedimento é realizado com precisão, carinho e 
-                            respeito às suas necessidades, realçando sua beleza 
+                        <p class="text-lg mb-6">
+                            Cuidando do seu bem-estar com dedicação e excelência.
+                            Cada procedimento é realizado com precisão, carinho e
+                            respeito às suas necessidades, realçando sua beleza
                             natural de forma única e personalizada.
                         </p>
                         <a href="https://wa.me/5562994479641" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
@@ -416,15 +428,36 @@
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
-                        <div class="flex justify-center">
-                            <img src="/New Photos/1000055078.jpg" alt="[Imagem de Marilia]" class="rounded-xl shadowgray w-3/4 max-w-xs h-auto">
-                        </div>
+                </div>
+
+                <div class="hidden md:flex mx-auto gap-8 sm:gap-12 items-center md:ml-[120px]">
+                    <div class="hidden md:block absolute top-0 right-0 z-0">
+                        <img src="/MARCA D_ÁGUA/MD21.png" alt="Logo" class="max-w-[300px] w-auto h-auto mt-8 mr-44">
+                    </div>
+                    <div class="md:text-left text-center px-4">
+                        <h1 class="text-4xl md:text-5xl font-bold color-subtitle mb-4 md:mb-6 leading-tight">
+                            Especialista em <span class="text-brand-brown">harmonização facial e corporal</span>
+                        </h1>
+                        <p class="text-lg color-subtitle mb-6 md:mb-8">
+                            Cuidando do seu bem-estar com dedicação e excelência.
+                            Cada procedimento é realizado com precisão, carinho e
+                            respeito às suas necessidades, realçando sua beleza
+                            natural de forma única e personalizada.
+                        </p>
+                        <a href="https://wa.me/5562994479641" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                            AGENDAR CONSULTA
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                        </a>
+                    </div>
+                    
+                    <div class="flex justify-end mt-[60px] z-10">
+                        <img src="/New Photos/1000055078-removebg-preview.png" alt="[Imagem de Marilia]" class="max-w-md h-auto object-contain">
                     </div>
                 </div>
             </section>
 
-            <section id="sobre" class="min-h-[80vh] mt-16 md:mr-[75px] flex items-center">
-                <div class="container mx-auto">
+            <section id="sobre" class="mt-16 flex items-center">
+                <div class="min-h-[80vh] md:mr-[75px] container mx-auto">
                     <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                         <div class="order-2 md:order-1 flex justify-center">
                             <img src="/New Photos/SAVE_20250820_153606.jpg" alt="Imagem de tratamento facial" class="rounded-xl shadow-gray-400/50 shadow-lg w-3/4 max-w-xs h-auto">
@@ -472,9 +505,9 @@
                 </div>
             </section>
 
-            <section class="scroll min-h-[80vh] mt-16 ml-0 mb-10 md:ml-[131px]">
-                <div class="container mx-auto px-4">
-                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <section class="scroll ml-0 mb-16 ">
+                <div class=" mt-16 min-h-[80vh] mx-auto px-4 md:ml-[120px]">
+                    <div class="grid md:grid-cols-2 sm:gap-12 items-center">
                         <div class="text-center md:text-left">
                             <h2 class="text-3xl font-semibold color-subtitle mb-4">Quem Sou Eu</h2>
                             <p class="color-subtitle mb-3 leading-relaxed font-bold">
@@ -638,8 +671,8 @@
             <section id="atendimento" class="overlay-section py-16 md:py-24 sm:px-8 lg:px-16">
                 <div class="container mx-auto">
                     <h2 class="section-title text-gray-800">Unidades de Atendimento</h2>
-                    <div class="grid md:grid-cols-2 gap-4 md:gap-8 relative">
-                        <div class="text-center p-6 md:-mr-4"> <p class="text-gray-800">Instituto Bahmad - Nutrição e Bem Estar</p>
+                    <div class="grid md:grid-cols-2 md:gap-8 relative">
+                        <div class="text-center p-4 md:-mr-4"> <p class="text-gray-800">Instituto Bahmad - Nutrição e Bem Estar</p>
                             <p class="text-sm text-gray-700 mb-3">Endereço completo aqui, Goiânia - GO</p>
                             <a href="https://www.google.com.br/maps/place/Bahmad+-+Centro+de+Nutri%C3%A7%C3%A3o+e+Bem+Estar/@-16.7067745,-49.3190723,12z/data=!4m6!3m5!1s0x935ef1f833f1abad:0xff050218e72f0ced!8m2!3d-16.7067745!4d-49.2366748!16s%2Fg%2F11j65ts2dv?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
                                 GOIÂNIA
@@ -649,7 +682,7 @@
                         <div class="md:absolute md:inset-y-0 md:left-1/2 md:-translate-x-1/2 md:w-px md:h-full md:bg-gray-600 hidden md:flex items-center justify-center">
                         </div>
 
-                        <div class="text-center p-6">
+                        <div class="text-center p-4">
                             <p class="text-gray-800">Marilia Carvalho Centro Estética</p>
                             <p class="text-sm text-gray-700 mb-3">Endereço completo aqui, São Miguel do Passa Quatro - GO</p>
                             <a href="https://www.google.com.br/maps/place/Mar%C3%ADlia+Carvalho,+Centro+de+Est%C3%A9tica+Avan%C3%A7ado./@-17.0582241,-48.6842703,14z/data=!4m6!3m5!1s0x9358cb5addc07bc9:0xb1bb6b6c38ca7256!8m2!3d-17.0582241!4d-48.6636709!16s%2Fg%2F11w1x2rb0w?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
@@ -660,7 +693,7 @@
                 </div>
             </section>
 
-            <section id="contato" class="overlay-section py-12 md:py-16 ">
+            <section id="contato" class="overlay-section px-4 py-12 md:py-16">
                 <div class="flex flex-col lg:flex-row items-center card card-wtsp lg:max-w-5xl mx-auto shadow-lg overflow-hidden rounded-2xl">
 
                     <div class="py-12 px-8 lg:pl-20 lg:pr-8 lg:py-16 flex flex-col justify-center text-center lg:text-left flex-grow">
@@ -678,8 +711,8 @@
                             </a>
                         </div>
                     </div>
-                    <div id="agende-consulta-img-container" class="lg:absolute lg:bottom-0 lg:right-[-20px] lg:h-[115%] lg:w-1/2 flex justify-center lg:justify-end pointer-events-none">
-                        <img src="/New Photos/1000055077-removebg-preview.png" alt="[Imagem de Marilia Carvalho]" class="h-full w-auto object-contain object-bottom pointer-events-auto mt-[-80px] lg:mt-0 lg:h-full">
+                    <div id="agende-consulta-img-container" class="md:ml-11 lg:absolute lg:bottom-16 lg:w-3/4 flex justify-center lg:justify-end pointer-events-none">
+                        <img src="/New Photos/1000055077-removebg-preview.png" alt="[Imagem de Marilia Carvalho]" class="max-w-md h-auto object-contain object-bottom pointer-events-auto lg:mt-0 lg:h-full rounded-br-4xl">
                     </div>
                 </div>
             </section>
@@ -697,8 +730,8 @@
                 <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
             </div>
             <div class="md:text-right"> 
-                <div class="inline-block text-center"> 
-                    <h4 class="font-semibold text-white mb-3">REDES SOCIAIS</h4>
+                <div class="flex items-center justify-center space-x-4 md:inline-block md:text-center"> 
+                    <h4 class="font-semibold text-white mb-0 md:mb-3">REDES SOCIAIS:</h4>
                     <div class="flex justify-center space-x-4"> 
                         <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
