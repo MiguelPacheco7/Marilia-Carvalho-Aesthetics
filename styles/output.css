@@ -18,7 +18,6 @@
     --color-purple-700: oklch(49.6% 0.265 301.924);
     --color-pink-100: oklch(94.8% 0.028 342.258);
     --color-pink-700: oklch(52.5% 0.223 3.958);
-    --color-slate-50: oklch(98.4% 0.003 247.858);
     --color-gray-100: oklch(96.7% 0.003 264.542);
     --color-gray-300: oklch(87.2% 0.01 258.338);
     --color-gray-400: oklch(70.7% 0.022 261.325);
@@ -31,7 +30,6 @@
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-xs: 20rem;
-    --container-sm: 24rem;
     --container-md: 28rem;
     --container-xl: 36rem;
     --container-2xl: 42rem;
@@ -303,14 +301,8 @@
   .mt-16 {
     margin-top: calc(var(--spacing) * 16);
   }
-  .mt-\[50px\] {
-    margin-top: 50px;
-  }
   .mt-\[60px\] {
     margin-top: 60px;
-  }
-  .mt-auto {
-    margin-top: auto;
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
@@ -357,6 +349,9 @@
   .ml-2 {
     margin-left: calc(var(--spacing) * 2);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -375,14 +370,47 @@
   .table {
     display: table;
   }
+  .h-1 {
+    height: calc(var(--spacing) * 1);
+  }
+  .h-1\/2 {
+    height: calc(1/2 * 100%);
+  }
   .h-7 {
     height: calc(var(--spacing) * 7);
   }
-  .h-12 {
-    height: calc(var(--spacing) * 12);
+  .h-15 {
+    height: calc(var(--spacing) * 15);
+  }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
   }
   .h-20 {
     height: calc(var(--spacing) * 20);
+  }
+  .h-\[90vh\] {
+    height: 90vh;
+  }
+  .h-\[100\] {
+    height: 100;
+  }
+  .h-\[100px\] {
+    height: 100px;
+  }
+  .h-\[400px\] {
+    height: 400px;
+  }
+  .h-\[800px\] {
+    height: 800px;
+  }
+  .h-\[850px\] {
+    height: 850px;
+  }
+  .h-\[900px\] {
+    height: 900px;
+  }
+  .h-\[px\] {
+    height: px;
   }
   .h-auto {
     height: auto;
@@ -402,11 +430,32 @@
   .w-3\/4 {
     width: calc(3/4 * 100%);
   }
-  .w-12 {
-    width: calc(var(--spacing) * 12);
-  }
   .w-20 {
     width: calc(var(--spacing) * 20);
+  }
+  .w-\[4px\] {
+    width: 4px;
+  }
+  .w-\[100px\] {
+    width: 100px;
+  }
+  .w-\[150px\] {
+    width: 150px;
+  }
+  .w-\[190px\] {
+    width: 190px;
+  }
+  .w-\[200px\] {
+    width: 200px;
+  }
+  .w-\[400px\] {
+    width: 400px;
+  }
+  .w-\[480px\] {
+    width: 480px;
+  }
+  .w-\[500px\] {
+    width: 500px;
   }
   .w-auto {
     width: auto;
@@ -482,17 +531,14 @@
   .justify-end {
     justify-content: flex-end;
   }
+  .justify-start {
+    justify-content: flex-start;
+  }
   .justify-items-center {
     justify-items: center;
   }
-  .gap-2 {
-    gap: calc(var(--spacing) * 2);
-  }
   .gap-4 {
     gap: calc(var(--spacing) * 4);
-  }
-  .gap-6 {
-    gap: calc(var(--spacing) * 6);
   }
   .gap-8 {
     gap: calc(var(--spacing) * 8);
@@ -568,9 +614,6 @@
     border-top-style: var(--tw-border-style);
     border-top-width: 1px;
   }
-  .border-gray-100 {
-    border-color: var(--color-gray-100);
-  }
   .border-gray-400 {
     border-color: var(--color-gray-400);
   }
@@ -583,29 +626,23 @@
   .border-gray-700 {
     border-color: var(--color-gray-700);
   }
+  .bg-black {
+    background-color: var(--color-black);
+  }
   .bg-black\/30 {
     background-color: color-mix(in srgb, #000 30%, transparent);
     @supports (color: color-mix(in lab, red, red)) {
       background-color: color-mix(in oklab, var(--color-black) 30%, transparent);
     }
   }
-  .bg-blue-100 {
-    background-color: var(--color-blue-100);
-  }
-  .bg-gray-800 {
-    background-color: var(--color-gray-800);
+  .bg-black\/40 {
+    background-color: color-mix(in srgb, #000 40%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      background-color: color-mix(in oklab, var(--color-black) 40%, transparent);
+    }
   }
   .bg-green-500 {
     background-color: var(--color-green-500);
-  }
-  .bg-pink-100 {
-    background-color: var(--color-pink-100);
-  }
-  .bg-purple-100 {
-    background-color: var(--color-purple-100);
-  }
-  .bg-slate-50 {
-    background-color: var(--color-slate-50);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -627,6 +664,9 @@
   }
   .object-center {
     object-position: center;
+  }
+  .object-top {
+    object-position: top;
   }
   .p-4 {
     padding: calc(var(--spacing) * 4);
@@ -673,17 +713,14 @@
   .py-20 {
     padding-block: calc(var(--spacing) * 20);
   }
-  .py-24 {
-    padding-block: calc(var(--spacing) * 24);
-  }
-  .py-28 {
-    padding-block: calc(var(--spacing) * 28);
-  }
   .pt-8 {
     padding-top: calc(var(--spacing) * 8);
   }
   .pt-16 {
     padding-top: calc(var(--spacing) * 16);
+  }
+  .pt-28 {
+    padding-top: calc(var(--spacing) * 28);
   }
   .text-center {
     text-align: center;
@@ -742,9 +779,6 @@
   .text-amber-950 {
     color: var(--color-amber-950);
   }
-  .text-blue-700 {
-    color: var(--color-blue-700);
-  }
   .text-gray-300 {
     color: var(--color-gray-300);
   }
@@ -769,20 +803,11 @@
   .text-green-500 {
     color: var(--color-green-500);
   }
-  .text-pink-700 {
-    color: var(--color-pink-700);
-  }
-  .text-purple-700 {
-    color: var(--color-purple-700);
-  }
   .text-red-500 {
     color: var(--color-red-500);
   }
   .text-white {
     color: var(--color-white);
-  }
-  .text-yellow-500 {
-    color: var(--color-yellow-500);
   }
   .underline {
     text-decoration-line: underline;
@@ -848,14 +873,6 @@
     --tw-duration: 300ms;
     transition-duration: 300ms;
   }
-  .hover\:-translate-y-1 {
-    &:hover {
-      @media (hover: hover) {
-        --tw-translate-y: calc(var(--spacing) * -1);
-        translate: var(--tw-translate-x) var(--tw-translate-y);
-      }
-    }
-  }
   .hover\:scale-105 {
     &:hover {
       @media (hover: hover) {
@@ -884,13 +901,6 @@
     &:hover {
       @media (hover: hover) {
         color: var(--color-white);
-      }
-    }
-  }
-  .hover\:underline {
-    &:hover {
-      @media (hover: hover) {
-        text-decoration-line: underline;
       }
     }
   }
@@ -1104,6 +1114,11 @@
   .md\:gap-10 {
     @media (width >= 48rem) {
       gap: calc(var(--spacing) * 10);
+    }
+  }
+  .md\:bg-\[\#F5F5F5\] {
+    @media (width >= 48rem) {
+      background-color: #F5F5F5;
     }
   }
   .md\:bg-gray-600 {

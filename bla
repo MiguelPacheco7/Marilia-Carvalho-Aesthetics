@@ -1,0 +1,151 @@
+<section id="sobre" class="flex items-center">
+                <div class="min-h-[80vh] md:mr-[75px] container mt-16 mx-auto">
+                    <div class="md:hidden bg-first-sec py-16 px-6">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="text-3xl font-semibold color-subtitle">
+                                <h2>Cuidados especiais para</h2>
+                                <h2 class="mb-6">valorizar sua beleza e saúde</h2>
+                            </div>
+                            <div class="space-y-4 mb-8 text-left">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">1</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Cada procedimento é pensado para realçar o que você tem de mais bonito,</p>
+                                        <p class="color-subtitle leading-tight">com naturalidade e equilíbrio.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">2</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Tratamentos que cuidam da sua pele e do seu corpo de forma integrada,</p>
+                                        <p class="color-subtitle leading-tight">com foco em bem-estar e resultados.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">3</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">O que há de mais avançado em estética facial e corporal,</p>
+                                        <p class="color-subtitle leading-tight">aliado a um olhar técnico e sensível.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">4</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Mais do que estética, uma experiência: ambiente acolhedor, atenção plena e protocolos feitos especialmente</p>
+                                        <p class="color-subtitle leading-tight">para atender às suas necessidades únicas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="tratamentos.html" class="btn-secondary border-2 border-gray-400/80 text-gray-600 font-semibold py-3 px-6 rounded-lg inline-block hover:bg-gray-100 transition-colors">
+                                Conheça nossos serviços
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden md:grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                        <div class="order-2 md:order-1 flex justify-center">
+                            <img src="/New Photos/SAVE_20250820_153606-removebg-preview.png" alt="[Imagem da Dr.]" class="w-3/4 max-w-xs h-auto">
+                        </div>
+                        <div class="order-1 md:order-2 flex flex-col items-center md:items-start px-4">
+                            <div class="text-3xl font-semibold color-subtitle text-center md:text-left">
+                                <h2>Cuidados especiais para</h2>
+                                <h2 class="mb-6">valorizar sua beleza e saúde</h2>
+                            </div>
+                            <div class="space-y-4 mb-8">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">1</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Cada procedimento é pensado para realçar o que você tem de mais bonito,</p>
+                                        <p class="color-subtitle leading-tight">com naturalidade e equilíbrio.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">2</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Tratamentos que cuidam da sua pele e do seu corpo de forma integrada,</p>
+                                        <p class="color-subtitle leading-tight">com foco em bem-estar e resultados.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">3</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">O que há de mais avançado em estética facial e corporal,</p>
+                                        <p class="color-subtitle leading-tight">aliado a um olhar técnico e sensível.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">4</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Mais do que estética, uma experiência: ambiente acolhedor, atenção plena e protocolos feitos especialmente</p>
+                                        <p class="color-subtitle leading-tight">para atender às suas necessidades únicas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="tratamentos.html" class="btn-secondary border-2 border-gray-400/80 text-gray-600 font-semibold py-3 px-6 rounded-lg inline-block hover:bg-gray-100 transition-colors">
+                                Conheça nossos serviços
+                            </a>
+                        </div>
+                    </div>
+                     </div>
+            </section>
+
+            <section class="scroll ml-0 mb-16 ">
+                 <div class="md:hidden flex flex-col justify-center min-h-screen relative overflow-hidden text-center p-4">
+                    <div class="absolute inset-0">
+                        <img src="/New Photos/SAVE_20250820_153535.jpg" alt="Dra. Marilia Carvalho" class="w-full h-full object-cover object-center">
+                        <div class="absolute inset-0 bg-black/40"></div>
+                    </div>
+                    <div class="relative z-10 text-white px-4">
+                         <h2 class="text-3xl font-semibold mb-4">Quem Sou Eu</h2>
+                         <p class="mb-3 leading-relaxed font-bold">
+                             Sou a Dra. Maríllia Carvalho, especialista 
+                             em harmonização facial e corporal.
+                         </p>
+                         <p class="mb-3 leading-relaxed">
+                             Acredito que estética de verdade começa com escuta, 
+                             personalização e respeito à beleza única de cada pessoa.
+                         </p>
+                         <p class="mb-3 leading-relaxed">
+                             Cada protocolo é pensado com dedicação, 
+                             técnica e sensibilidade — sempre priorizando saúde, 
+                             segurança e resultados naturais.
+                         </p>
+                         <p class="mb-6 leading-relaxed">
+                             Aqui, você encontra mais do que procedimentos: 
+                             vive uma experiência de cuidado, bem-estar e confiança.
+                         </p>
+                         <a href="quem-sou-eu.html" class="bg-white text-gray-800 font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                             Conheça mais
+                         </a>
+                    </div>
+                </div>
+                <div class="hidden md:grid mt-16 min-h-[80vh] mx-auto px-4 md:ml-[120px]">
+                    <div class="grid md:grid-cols-2 sm:gap-12 items-center">
+                        <div class="text-center md:text-left">
+                            <h2 class="text-3xl font-semibold color-subtitle mb-4">Quem Sou Eu</h2>
+                            <p class="color-subtitle mb-3 leading-relaxed font-bold">
+                                Sou a Dra. Maríllia Carvalho, especialista 
+                                em harmonização facial e corporal.
+                            </p>
+                            <p class="color-subtitle mb-3 leading-relaxed">
+                                Acredito que estética de verdade começa com escuta, 
+                                personalização e respeito à beleza única de cada pessoa.
+                            </p>
+                            <p class="color-subtitle mb-3 leading-relaxed">
+                                Cada protocolo é pensado com dedicação, 
+                                técnica e sensibilidade — sempre priorizando saúde, 
+                                segurança e resultados naturais.
+                            </p>
+                            <p class="color-subtitle mb-6 leading-relaxed">
+                                Aqui, você encontra mais do que procedimentos: 
+                                vive uma experiência de cuidado, bem-estar e confiança.
+                            </p>
+                            <a href="quem-sou-eu.html" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                                Conheça mais
+                            </a>
+                        </div>
+                        <div id="quem-sou-eu-img-container" class="flex justify-center">
+                            <img src="/New Photos/SAVE_20250820_153535.jpg" alt="[Imagem de bem-estar e cuidado]" class="rounded-xl shadowgray w-3/4 max-w-xs h-auto">
+                        </div>
+                    </div>
+                </div>
+                 </section>

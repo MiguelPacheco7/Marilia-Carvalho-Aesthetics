@@ -64,6 +64,10 @@
             color: #8F6B6B;
         }
 
+        .bg-footer {
+            background-color: #51648C;
+        }
+
         .bt-color {
             background-color: #51648C;
             color: white;
@@ -456,12 +460,53 @@
                 </div>
             </section>
 
-            <div class="bg-second-third-sec">
+            <div class="md:bg-[#F5F5F5]">
             <section id="sobre" class="flex items-center">
-                <div class="min-h-[80vh] md:mr-[75px] container mt-16 mx-auto">
-                    <div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+                <div class="md:mr-[75px] container mx-auto">
+                    <div class="md:hidden bg-first-sec py-16 px-6">
+                        <div class="flex flex-col items-center text-center">
+                            <div class="text-3xl font-semibold color-subtitle">
+                                <h2>Cuidados especiais para</h2>
+                                <h2 class="mb-6">valorizar sua beleza e saúde</h2>
+                            </div>
+                            <div class="space-y-4 mb-8 text-left">
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">1</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Cada procedimento é pensado para realçar o que você tem de mais bonito,</p>
+                                        <p class="color-subtitle leading-tight">com naturalidade e equilíbrio.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">2</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Tratamentos que cuidam da sua pele e do seu corpo de forma integrada,</p>
+                                        <p class="color-subtitle leading-tight">com foco em bem-estar e resultados.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">3</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">O que há de mais avançado em estética facial e corporal,</p>
+                                        <p class="color-subtitle leading-tight">aliado a um olhar técnico e sensível.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <span class="text-xl font-bold color-subtitle">4</span>
+                                    <div>
+                                        <p class="color-subtitle leading-tight">Mais do que estética, uma experiência: ambiente acolhedor, atenção plena e protocolos feitos especialmente</p>
+                                        <p class="color-subtitle leading-tight">para atender às suas necessidades únicas.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="tratamentos.html" class="btn-secondary border-2 border-gray-400/80 text-gray-600 font-semibold py-3 px-6 rounded-lg inline-block hover:bg-gray-100 transition-colors">
+                                Conheça nossos serviços
+                            </a>
+                        </div>
+                    </div>
+                    <div class="hidden min-h-[80vh] md:grid md:grid-cols-2 gap-8 sm:gap-12 items-center mt-16">
                         <div class="order-2 md:order-1 flex justify-center">
-                            <img src="/New Photos/SAVE_20250820_153606.jpg" alt="Imagem de tratamento facial" class="rounded-xl shadow-gray-400/50 shadow-lg w-3/4 max-w-xs h-auto">
+                            <img src="/New Photos/SAVE_20250820_153606.jpg" alt="[Imagem da Dr.]" class="rounded-xl shadow-gray-400/50 shadow-lg w-3/4 max-w-xs h-auto">
                         </div>
                         <div class="order-1 md:order-2 flex flex-col items-center md:items-start px-4">
                             <div class="text-3xl font-semibold color-subtitle text-center md:text-left">
@@ -503,11 +548,43 @@
                             </a>
                         </div>
                     </div>
-                </div>
+                     </div>
             </section>
 
-            <section class="scroll ml-0 mb-16 ">
-                <div class=" mt-16 min-h-[80vh] mx-auto px-4 md:ml-[120px]">
+            <section class="scroll ml-0 mb-16">
+                <div class="bg-first-sec">
+                    <div class="block md:hidden absolute inset-0 bg-black/30"></div>
+                    <div class="md:hidden flex flex-col justify-center h-[90vh] relative overflow-hidden text-center p-4 pt-28">
+                        <div class="absolute inset-0">
+                            <img src="/New Photos/SAVE_20250820_153606-removebg-preview.png" alt="Dra. Marilia Carvalho" class="w-full h-full object-cover object-top">
+                            <div class="absolute inset-0 bg-black/30"></div>
+                        </div>
+                        <div class="relative z-10 text-white">
+                            <h2 class="text-3xl font-semibold mb-4">Quem Sou Eu</h2>
+                            <p class="mb-3 leading-relaxed font-bold">
+                                Sou a Dra. Maríllia Carvalho, especialista 
+                                em harmonização facial e corporal.
+                            </p>
+                            <p class="mb-3 leading-relaxed">
+                                Acredito que estética de verdade começa com escuta, 
+                                personalização e respeito à beleza única de cada pessoa.
+                            </p>
+                            <p class="mb-3 leading-relaxed">
+                                Cada protocolo é pensado com dedicação, 
+                                técnica e sensibilidade — sempre priorizando saúde, 
+                                segurança e resultados naturais.
+                            </p>
+                            <p class="mb-6 leading-relaxed">
+                                Aqui, você encontra mais do que procedimentos: 
+                                vive uma experiência de cuidado, bem-estar e confiança.
+                            </p>
+                            <a href="quem-sou-eu.html" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                                Conheça mais
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:grid mt-16 min-h-[80vh] mx-auto px-4 md:ml-[120px]">
                     <div class="grid md:grid-cols-2 sm:gap-12 items-center">
                         <div class="text-center md:text-left">
                             <h2 class="text-3xl font-semibold color-subtitle mb-4">Quem Sou Eu</h2>
@@ -528,7 +605,7 @@
                                 Aqui, você encontra mais do que procedimentos: 
                                 vive uma experiência de cuidado, bem-estar e confiança.
                             </p>
-                            <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-bro" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="quem-sou-eu.html" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
                                 Conheça mais
                             </a>
                         </div>
@@ -614,9 +691,9 @@
                 <div class="container mx-auto">
                     <h2 class="section-title text-gray-800">Unidades de Atendimento</h2>
                     <div class="grid md:grid-cols-2 md:gap-8 relative">
-                        <div class="text-center p-4 md:-mr-4"> <p class="text-gray-800">Instituto Bahmad - Nutrição e Bem Estar</p>
+                        <div class="text-center p-4 md:-mr-4"> <p class="text-gray-800">Flamboyant Park Bussines</p>
                             <p class="text-sm text-gray-700 mb-3">Endereço completo aqui, Goiânia - GO</p>
-                            <a href="https://www.google.com.br/maps/place/Bahmad+-+Centro+de+Nutri%C3%A7%C3%A3o+e+Bem+Estar/@-16.7067745,-49.3190723,12z/data=!4m6!3m5!1s0x935ef1f833f1abad:0xff050218e72f0ced!8m2!3d-16.7067745!4d-49.2366748!16s%2Fg%2F11j65ts2dv?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="https://maps.app.goo.gl/tHfTeZ75w4kFywzp8" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
                                 GOIÂNIA
                             </a>
                         </div>
@@ -627,7 +704,7 @@
                         <div class="text-center p-4">
                             <p class="text-gray-800">Marilia Carvalho Centro Estética</p>
                             <p class="text-sm text-gray-700 mb-3">Endereço completo aqui, São Miguel do Passa Quatro - GO</p>
-                            <a href="https://www.google.com.br/maps/place/Mar%C3%ADlia+Carvalho,+Centro+de+Est%C3%A9tica+Avan%C3%A7ado./@-17.0582241,-48.6842703,14z/data=!4m6!3m5!1s0x9358cb5addc07bc9:0xb1bb6b6c38ca7256!8m2!3d-17.0582241!4d-48.6636709!16s%2Fg%2F11w1x2rb0w?hl=pt-BR&entry=ttu&g_ep=EgoyMDI1MDUyOC4wIKXMDSoASAFQAw%3D%3D" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                            <a href="https://maps.app.goo.gl/eGiCP4cbMKwyCzES7" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
                                 SÃO MIGUEL DO PASSA QUATRO
                             </a>
                         </div>
@@ -660,16 +737,16 @@
             </section>
             </div>
         </main>
-    <footer class="btn-primary text-gray-300 py-16">
+    <footer class="bg-footer text-gray-300 py-16">
         <div class="px-16 container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
             <div>
                 <a href="/">
-                    <img src="/MARCA D_ÁGUA/MD03.png" alt="Logo Marilia Carvalho Rodapé">
+                    <img src="/MARCA D_ÁGUA/MD11.png" alt="Logo Marilia Carvalho Rodapé">
                 </a>
             </div>
             <div class="md:ml-10">
                 <h4 class="text-lg font-semibold text-white mb-3">LOCAIS DE ATENDIMENTO</h4>
-                <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Instituto Bahmad - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
+                <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Flamboyant Park Bussines - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
                 <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
             </div>
             <div class="md:text-right"> 
