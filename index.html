@@ -290,23 +290,27 @@
             -webkit-line-clamp: unset;
             line-clamp: unset;
         }
-
-        /* Z-INDEX CORRIGIDO DIRETAMENTE NO ELEMENTO COM TAILWIND */
-
+        
+        /* ===== INÍCIO DA CORREÇÃO PARA IOS ===== */
         .overlay-section1 {
             position: relative;
             z-index: 2;
             background: rgba(250, 235, 241);
             border-top-left-radius: 2rem;
             border-top-right-radius: 2rem;
-            box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);  
+            box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
+            /* Força a aceleração por hardware para corrigir bugs de sobreposição no iOS */
+            transform: translateZ(0);
         }
 
         .overlay-section {
             position: relative;
             z-index: 2;
             background: rgba(250, 235, 241);
+            /* Força a aceleração por hardware para corrigir bugs de sobreposição no iOS */
+            transform: translateZ(0);
         }
+        /* ===== FIM DA CORREÇÃO PARA IOS ===== */
 
         #mobile-menu {
             transition: transform 0.3s ease-in-out;
@@ -558,7 +562,7 @@
                     </div>
                 </section>
 
-                <section id="quem-sou-eu-section" class="ml-0 mb-16 sticky top-24 z-[1]">
+                <section id="quem-sou-eu-section" class="ml-0 mb-16 sticky top-24 z-[1] transform-gpu">
                     <div class="bg-first-sec">
                         <div class="block md:hidden absolute inset-0 bg-black/30"></div>
                         <div class="md:hidden flex flex-col justify-center h-[90vh] relative overflow-hidden text-center p-4 pt-28">
