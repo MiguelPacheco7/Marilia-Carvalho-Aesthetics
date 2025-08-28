@@ -562,7 +562,7 @@
                     </div>
                 </section>
 
-                <section class="scroll ml-0 mb-16">
+                <section id="quem-sou-eu-section" class="ml-0 mb-16 md:sticky md:top-24">
                     <div class="bg-first-sec">
                         <div class="block md:hidden absolute inset-0 bg-black/30"></div>
                         <div class="md:hidden flex flex-col justify-center h-[90vh] relative overflow-hidden text-center p-4 pt-28">
@@ -846,13 +846,13 @@
 
             let currentIndex = 0;
             const slideCount = slides.length;
+            let autoPlayInterval;
 
             const updateCarousel = () => {
                 slides.forEach((slide, index) => {
                     let transform = '';
                     let opacity = 0;
                     let zIndex = 1;
-                    let scale = 0.8;
 
                     const dist = index - currentIndex;
 
@@ -860,7 +860,6 @@
                         transform = 'translateZ(0) scale(1)';
                         opacity = 1;
                         zIndex = 10;
-                        scale = 1;
                         slide.classList.add('active');
                         slide.classList.remove('prev', 'next');
                     } else if (dist === -1 || (dist === slideCount - 1 && currentIndex === 0)) {
@@ -897,10 +896,53 @@
                 updateCarousel();
             };
 
-            nextButton.addEventListener('click', goToNext);
-            prevButton.addEventListener('click', goToPrev);
+            const stopAutoPlay = () => {
+                clearInterval(autoPlayInterval);
+            };
 
+            const startAutoPlay = () => {
+                stopAutoPlay(); // Clear any existing interval
+                autoPlayInterval = setInterval(goToNext, 5000); // Change slide every 5 seconds
+            };
+
+            // Initialize carousel and auto-play
             updateCarousel();
+            startAutoPlay();
+
+            // Event listeners for buttons
+            nextButton.addEventListener('click', () => {
+                goToNext();
+                stopAutoPlay();
+            });
+            prevButton.addEventListener('click', () => {
+                goToPrev();
+                stopAutoPlay();
+            });
+
+            // Touch swipe functionality
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.addEventListener('touchstart', (e) => {
+                stopAutoPlay();
+                touchStartX = e.touches[0].clientX;
+            });
+
+            track.addEventListener('touchmove', (e) => {
+                touchEndX = e.touches[0].clientX;
+            });
+
+            track.addEventListener('touchend', () => {
+                const minSwipeDistance = 50;
+                const swipeDistance = touchStartX - touchEndX;
+
+                if (swipeDistance > minSwipeDistance) {
+                    goToNext();
+                } else if (swipeDistance < -minSwipeDistance) {
+                    goToPrev();
+                }
+                startAutoPlay(); // Restart auto-play after swipe
+            });
         });
 
         document.addEventListener('DOMContentLoaded', () => {
@@ -943,6 +985,20 @@
         }
 
         requestAnimationFrame(raf);
+
+        const scrollSection = document.getElementById('quem-sou-eu-section');
+        const offset = 96; // 6rem em pixels (16px * 6)
+        const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+        if (isMobile) {
+            lenis.on('scroll', ({ scroll }) => {
+                if (scroll > scrollSection.offsetTop - offset) {
+                    scrollSection.style.transform = `translateY(${scroll - (scrollSection.offsetTop - offset)}px)`;
+                } else {
+                    scrollSection.style.transform = 'translateY(0)';
+                }
+            });
+        }
     </script>
 </body>
 </html>
