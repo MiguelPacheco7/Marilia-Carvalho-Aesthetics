@@ -14,8 +14,9 @@
             body {
                 font-family: 'Inter', sans-serif;
                 scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
-                background: linear-gradient(to bottom right, #F5F5F5, #FAEBF1);
-                min-height: 100vh
+                background: rgb(245,245,245);
+                min-height: 100vh;
+                overflow-x: hidden;
             }
 
             .floating-header {
@@ -33,31 +34,31 @@
                 box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
             }
 
-            .brand-brown {
-                color: #3A2B1E;
+            .bg-img{
+                background-image: url(/Assets/001\ 1.png);
             }
 
-            .btn-primary {
-                background-color: #3A2B1E;
+            .text-color {
+                color: #8F6B6B;
+            }
+
+            .color-subtitle {
+                color: #1F2937;
+            }
+
+            .bg-footer {
+                background-color: #51648C;
+            }
+
+            .img-logo-footer {
+                width: 200px;
+            }
+
+            .bt-color {
+                background-color: rgb(222, 202, 196);
                 color: white;
-                transition: background-color 0.3s ease, transform 0.3s ease;
             }
 
-            .btn-primary-footer {
-                background-color: #3A2B1E; /* Primary button background color */
-            }
-
-            .btn-primary:hover {
-                background-color: #2c2016; /* Darker shade of brown on hover */
-            }
-
-            .btn-primary:hover {
-                background-color: #2c2016;
-                transform: scale(1.05);
-            }
-            .footer-bg {
-                background-color: #3A2B1E;
-            }
             /* Estilo para o menu hamburguer */
             #mobile-menu {
                 transition: transform 0.3s ease-in-out;
@@ -77,9 +78,9 @@
                 transform: translateY(-5px);
                 box-shadow: 0 15px 25px -5px rgba(0,0,0,0.1), 0 8px 10px -6px rgba(0,0,0,0.08);
             }
-            .treatment-card img {
-                aspect-ratio: 16 / 10; /* Proporção para as imagens dos cards */
-                object-fit: cover;
+
+            .bg-first-sec-pc {
+                background-color: #faebf0;
             }
         </style>
     </head>
@@ -88,7 +89,7 @@
 
         <header class="bg-white/80 backdrop-blur-sm floating-header">
             <div class="container mx-auto flex justify-between items-center py-3 px-4">
-                <a href="index.html" class="flex items-center text-2xl font-bold text-gray-700">
+                <a href="/" class="flex items-center text-2xl font-bold text-gray-700">
                     <img src="/MARCA D_ÁGUA/MD04.png" alt="Logo Marilia Carvalho" class="h-7 md:h-9">
                 </a>
 
@@ -100,7 +101,7 @@
                 </nav>
 
                 <div class="hidden md:flex items-center space-x-4">
-                    <a href="https://ig.me/m/YOURUSERNAME" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
+                    <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                     </a>
                     <a href="https://wa.me/5531987654321" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="WhatsApp">
@@ -129,7 +130,7 @@
                         <a href="index.html#contato" class="text-xl text-gray-700 hover:text-brand-brown transition-colors py-2">Contato</a>
                     </nav>
                     <div class="flex justify-center space-x-6 mt-10">
-                        <a href="https://ig.me/m/YOURUSERNAME" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
+                        <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                         </a>
                         <a href="https://wa.me/5531987654321" class="text-gray-500 hover:text-brand-brown transition-colors" aria-label="WhatsApp">
@@ -143,85 +144,99 @@
         </header>
 
         <main>
-            <section class="py-12 md:py-20 px-6 text-center bg-home">
+            <section class="py-12 md:py-20 px-6 text-center bg-first-sec-pc">
                 <div class="container mx-auto">
-                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-brand-brown mb-4">Tratamentos exclusivos</h1>
-                    <p class="text-md sm:text-lg text-gray-900 max-w-2xl mx-auto">
-                        Protocolos avançados, personalizados e focados em resultados reais.
+                    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold color-subtitle text-brand-brown mb-4">Tratamentos exclusivos</h1>
+                    <p class="text-md sm:text-lg color-subtitle max-w-2xl mx-auto">
+                        Protocolos avançados, personalizados e focados em resultados reais. 
+                    </p>
+                    <p class="text-md sm:text-lg color-subtitle max-w-2xl mx-auto">
                         Cada procedimento é cuidadosamente pensado para valorizar a sua beleza natural, 
                         com segurança, sofisticação e a mais alta tecnologia da estética moderna.
                     </p>
                 </div>
             </section>
 
-            <section id="tratamentos-lista" class="py-16 md:py-24 px-20">
-                <div class="container mx-auto">
+            <section id="tratamentos-lista" class="py-16 md:py-24">
+                <div class="container mx-auto px-6">
                     <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
 
                         <div class="treatment-card flex flex-col">
-                            <img src="https://placehold.co/600x375/9D7B7B/FFFFFF?text=Microinfusão+de+Ativos&font=inter" alt="[Imagem do tratamento Microinfusão de Ativos]" class="w-full h-48 object-cover">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-brand-brown mb-2">Estética regenerativa</h3>
-                                <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
-                                    Tratamentos que vão além da beleza. Aqui, o foco é recuperar, revitalizar e regenerar sua pele com ativos potentes, que estimulam o colágeno, melhoram a firmeza e devolvem o viço. Ideal para quem deseja longevidade estética com saúde.
+                            <div class="p-6 flex flex-col">
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Estética regenerativa</h3>
+                                <p class="color-subtitle text-sm mb-10 leading-relaxed">
+                                    Tratamentos que vão além da beleza. 
+                                </p>
+                                <p class="color-subtitle text-sm leading-relaxed">
+                                    Aqui, o foco é recuperar, revitalizar e regenerar sua pele com ativos potentes, que estimulam o colágeno, melhoram a firmeza e devolvem o viço. Ideal para quem deseja longevidade estética com saúde.
                                 </p>
                             </div>
                         </div>
 
                         <div class="treatment-card flex flex-col">
-                            <img src="https://placehold.co/600x375/A88F8F/FFFFFF?text=Peeling+Químico&font=inter" alt="[Imagem do tratamento Peeling Químico]" class="w-full h-48 object-cover">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-brand-brown mb-2">Esvaziadores de gordura</h3>
-                                <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
-                                    Protocolos injetáveis pensados para gordura localizada e retenção. Com fórmulas personalizadas, ajudam a redefinir contornos e diminuir medidas de forma segura e eficaz — sem a necessidade de procedimentos invasivos.
+                            <div class="p-6 flex flex-col">
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Esvaziadores de gordura</h3>
+                                <p class="color-subtitle text-sm mb-4 leading-relaxed">
+                                    Protocolos injetáveis pensados para gordura localizada e retenção. 
+                                </p>
+                                <p class="color-subtitle tex text-sm leading-relaxed">
+                                    Com fórmulas personalizadas, ajudam a redefinir contornos e diminuir medidas de forma segura e eficaz — sem a necessidade de procedimentos invasivos.
                                 </p>
                             </div>
                         </div>
 
                         <div class="treatment-card flex flex-col">
-                            <img src="https://placehold.co/600x375/B3A3A3/FFFFFF?text=Bioestimulador+de+Colágeno&font=inter" alt="[Imagem do tratamento Bioestimulador de Colágeno]" class="w-full h-48 object-cover">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-brand-brown mb-2">Botox</h3>
-                                <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
-                                    Com aplicação precisa e segura, ele promove um efeito de frescor e leveza no rosto — sem comprometer sua expressão natural.Ideal para quem busca um rejuvenescimento sutil, preventivo e eficaz, com resultados que respeitam a harmonia do seu rosto.
+                            <div class="p-6 flex flex-col">
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Botox</h3>
+                                <p class="color-subtitle text-sm mb-4 leading-relaxed">
+                                    Com aplicação precisa e segura, ele promove um efeito de frescor e leveza no rosto — sem comprometer sua expressão natural. 
+                                </p>
+                                <p class="color-subtitle text-sm leading-relaxed">
+                                    Ideal para quem busca um rejuvenescimento sutil, preventivo e eficaz, com resultados que respeitam a harmonia do seu rosto.
                                 </p>
                             </div>
                         </div>
 
                         <div class="treatment-card flex flex-col">
-                            <img src="https://placehold.co/600x375/9D7B7B/FFFFFF?text=Preenchimento+Labial&font=inter" alt="[Imagem do tratamento Preenchimento Labial]" class="w-full h-48 object-cover">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-brand-brown mb-2">Bioestimulador de colágeno</h3>
-                                <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
-                                    Indicado para quem quer tratar a flacidez e recuperar o volume de forma natural. O colágeno é reativado gradualmente, trazendo firmeza, sustentação e um efeito lifting que respeita sua expressão.
+                            <div class="p-6 flex flex-col">
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Bioestimulador de colágeno</h3>
+                                <p class="color-subtitle text-sm mb-4 leading-relaxed">
+                                    Indicado para quem quer tratar a flacidez e recuperar o volume de forma natural. 
+                                </p>
+                                <p class="color-subtitle text-sm leading-relaxed">
+                                    O colágeno é reativado gradualmente, trazendo firmeza, sustentação e um efeito lifting que respeita sua expressão.
                                 </p>
                             </div>
                         </div>
                         
                         <div class="treatment-card flex flex-col">
-                            <img src="https://placehold.co/600x375/A88F8F/FFFFFF?text=Toxina+Botulínica&font=inter" alt="[Imagem do tratamento Toxina Botulínica]" class="w-full h-48 object-cover">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-brand-brown mb-2">Reposição de vitaminas e minerais</h3>
-                                <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
-                                    Mais energia, imunidade e equilíbrio. Através de injetáveis, realizamos a reposição de nutrientes essenciais para o bom funcionamento do organismo, refletindo diretamente na saúde da pele e no seu bem-estar.
+                            <div class="p-6 flex flex-col">
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Reposição de vitaminas e minerais</h3>
+                                <p class="color-subtitle text-sm mb-4 leading-relaxed">
+                                    Mais energia, imunidade e equilíbrio. 
+                                </p>
+                                <p class="color-subtitle text-sm leading-relaxed">
+                                    Através de injetáveis, realizamos a reposição de nutrientes essenciais para o bom funcionamento do organismo, refletindo diretamente na saúde da pele e no seu bem-estar.
                                 </p>
                             </div>
                         </div>
 
                         <div class="treatment-card flex flex-col">
-                            <img src="https://placehold.co/600x375/B3A3A3/FFFFFF?text=Tratamento+Ortomolecular&font=inter" alt="[Imagem do tratamento Ortomolecular]" class="w-full h-48 object-cover">
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-semibold text-brand-brown mb-2">Skinbooster</h3>
-                                <p class="text-gray-600 text-sm mb-4 leading-relaxed flex-grow">
-                                    Uma verdadeira “hidratação injetável” com ácido hialurônico, que melhora textura, brilho e elasticidade. Ideal para preparar a pele para o verão, eventos especiais ou manter o cuidado contínuo durante todo o ano.
+                            <div class="p-6 flex flex-col">
+                                <h3 class="text-xl font-semibold color-subtitle mb-2">Skinbooster</h3>
+                                <p class="color-subtitle text-sm mb-4 leading-relaxed">
+                                    Uma verdadeira “hidratação injetável” com ácido hialurônico, que melhora textura, brilho e elasticidade. 
+                                </p>
+                                <p class="color-subtitle tex text-sm leading-relaxed">
+                                    Ideal para preparar a pele para o verão, eventos especiais ou manter o cuidado contínuo durante todo o ano.
                                 </p>
                             </div>
                         </div>
                         </div>
 
                     <div class="text-center mt-12 md:mt-16">
-                        <a href="index.html#contato" class="btn-primary font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg">
-                            SAIBA MAIS INFORMAÇÕES
+                        <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="bt-color font-semibold py-3 px-8 rounded-lg inline-flex items-center text-lg shadow-lg">
+                            ACOMPANHE OS DISTAQUES NO INSTAGRAM
                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right ml-2"><line x1="5" x2="19" y1="12" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                         </a>
                     </div>
@@ -229,26 +244,23 @@
             </section>
         </main>
 
-        <footer class="btn-primary-footer text-gray-300 py-16">
-            <div class="px-16 container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
-                    <a href="index.html">
-                        <img src="/MARCA D_ÁGUA/MD03.png" alt="Logo Marilia Carvalho Rodapé">
-                    </a>
-                </div>
-                <div class="ml-10">
+        <footer class="bg-footer text-gray-300 py-16">
+            <div class="px-16 container mx-auto flex flex-col md:grid md:grid-cols-3 gap-8 text-center md:text-left items-center">
+                
+                <div class="md:ml-10 order-2 md:order-2">
                     <h4 class="text-lg font-semibold text-white mb-3">LOCAIS DE ATENDIMENTO</h4>
-                    <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Instituto Bahmad - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
+                    <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Flamboyant Park Bussines - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
                     <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
                 </div>
-                <div class="md:text-right"> 
-                    <div class="inline-block text-center"> 
-                        <h4 class="font-semibold text-white mb-3">REDES SOCIAIS</h4>
-                        <div class="flex justify-center space-x-4"> 
-                            <a href="https://ig.me/m/YOURUSERNAME" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                
+                <div class="text-center order-2 md:order-2">
+                    <div class="inline-block">
+                        <h4 class="font-semibold text-white mb-2">REDES SOCIAIS</h4>
+                        <div class="flex justify-center space-x-4">
+                            <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                             </a>
-                            <a href="https://wa.me/5531987654321" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
+                            <a href="https://wa.me/5562994479641" class="text-gray-400 hover:text-white transition-colors" aria-label="WhatsApp">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor" viewBox="0 0 16 16">
                                     <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943s-.182-.133-.38-.232z"/>
                                 </svg>
@@ -256,10 +268,16 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="flex justify-center order-1 md:order-2">
+                    <a href="/">
+                        <img src="/Marilia Loreni - Identidade Visual/MARCA D_ÁGUA/MD18.png" alt="Logo Marilia Carvalho Rodapé" class="img-logo-footer"> </a>
+                </div>
+
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-                <p>&copy; <span id="currentYear"></span> Marilia Carvalho. Todos os direitos reservados.</p>
-                <p>Desenvolvido com <span class="text-red-500">&hearts;</span></p>
+                <p>© <span id="currentYear"></span> Marilia Carvalho. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <span class="text-red-500">♥</span></p>
             </div>
         </footer>
 
@@ -314,3 +332,5 @@
 
     </body>
 </html>
+<!-- Developed by Miguel A. Pacheco - Optimum co.
+GitHub - MiguelPacheco7-->
