@@ -34,6 +34,16 @@
             box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
         }
 
+        .logo-header {
+        height: 48px; /* Defina o tamanho desejado em pixels */
+        }
+
+        @media (min-width: 768px) { /* Exemplo de media query para telas maiores */
+            .logo-header {
+                height: 64px;
+            }
+        }
+
         .bg-first-sec {
             background-color: rgba(222, 202, 196);
         }
@@ -80,12 +90,12 @@
         }
 
         .btn-secondary {
-            border-color: rgb(222, 202, 196);
-            color: rgb(222, 202, 196);
+            border-color: #d6d6d6;
+            color: #d6d6d6;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
         .btn-secondary:hover {
-            background-color: rgb(222, 202, 196);
+            background-color: #d6d6d6;
             color: white;
         }
         .section-title {
@@ -368,6 +378,10 @@
         .img-logo-footer {
             width: 200px;
         }
+
+        .cl-bg-sections {
+            background-color: #f5f5f5;
+        }
     </style>
 </head>
 <body class="bg-first-sec-pc overflow-x-hidden">
@@ -375,7 +389,7 @@
         <header class="bg-white/80 backdrop-blur-sm floating-header top-[10px]">
             <div class="container mx-auto flex justify-between items-center py-3 px-4">
                 <a href="/" class="flex items-center text-2xl font-bold text-gray-700">
-                    <img src="/MARCA D_ÁGUA/MD04.png" alt="Logo Marilia Carvalho" class="h-7 md:h-9">
+                    <img src="/MARCA D_ÁGUA/MD04.png" alt="Logo Marilia Carvalho" class="logo-header">
                 </a>
 
                 <nav class="hidden md:flex items-center space-x-8 text-sm font-medium">
@@ -482,8 +496,8 @@
                 </div>
             </section>
 
-            <div class="md:bg-[rgb(245,245,245)]">
-                <section id="sobre" class="flex items-center">
+            <div class="md:bg-[#f5f5f5]">
+                <section id="sobre" class="md:bg-[#f5f5f5] flex items-center">
                     <div class="container mx-auto max-w-7xl">
                         <div class="md:hidden bg-first-sec py-16 px-6">
                             <div class="flex flex-col items-center text-center">
@@ -944,3 +958,5 @@
     </script>
 </body>
 </html>
+<!-- Developed by Miguel A. Pacheco - Optimum co.
+GitHub - MiguelPacheco7-->
