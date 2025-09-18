@@ -2,11 +2,10 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // Define o ano atual no rodapé
-    // Verificação para evitar erros caso os elementos não existam em todas as páginas
-    const currentYearMobile = document.getElementById('currentYearMobile');
-    const currentYearDesktop = document.getElementById('currentYearDesktop');
-    if (currentYearMobile) currentYearMobile.textContent = new Date().getFullYear();
-    if (currentYearDesktop) currentYearDesktop.textContent = new Date().getFullYear();
+    const yearSpan = document.getElementById('currentYear');
+    if (yearSpan) {
+        yearSpan.textContent = new Date().getFullYear();
+    }
 
     // Lógica para o menu mobile
     const menuBtn = document.getElementById('menu-btn');

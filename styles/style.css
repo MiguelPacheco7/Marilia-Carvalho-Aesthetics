@@ -70,9 +70,7 @@ body {
     color: #8F6B6B;
 }
 
-.bg-footer {
-    background-color: #51648C;
-}
+.bg-footer {}
 
 .bt-color {
     background-color: rgb(222, 202, 196);
@@ -86,14 +84,9 @@ body {
 }
 
 .btn-secondary {
-    border-color: rgb(222, 202, 196);
-    color: rgb(222, 202, 196);
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.btn-secondary:hover {
-    background-color: rgb(222, 202, 196);
-    color: white;
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #1F2937;
 }
 
 .section-title {
@@ -111,6 +104,11 @@ body {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.img-sec-two {
+    margin-top: 20px;
+    height: 565px;
 }
 
 .overlay-section1 {
@@ -132,6 +130,10 @@ body {
 
 #mobile-menu {
     transition: transform 0.3s ease-in-out;
+}
+
+#carousel {
+    padding-top: 3.5rem/* 56px */;
 }
 
 .carousel-3d-container {
@@ -339,9 +341,38 @@ body {
     height: 1.25rem;
 }
 
+#destaques {
+    padding-top: 2rem /* 32px */;
+    padding-bottom: 5rem /* 80px */;
+}
+
+.card-wtsp {
+    height: 600px;
+    background-image: url('/New Photos/SAVE_20250820_153606.jpg');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.card-wtsp-desk {
+    background-color: rgba(222, 202, 196);
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.back-sec-atendimento {
+    background-color: #d6d6d6;
+}
+
 footer {
     position: relative;
     z-index: 2;
+    background-image: url(/Assets/cores\ site_page-0006.jpg);
 }
 
 .bg-first-sec-pc {
@@ -359,4 +390,23 @@ footer {
 
 .cl-bg-sections {
     background-color: #f5f5f5;
+}
+
+.text-footer {
+    color: #1F2937;
+}
+
+#contato {
+    padding-top: 3rem;
+}
+
+.agende-consulta-img {
+    /* Mover a imagem para cima. Ajuste o valor conforme a sua preferência */
+    margin-top: -80px;
+
+    /* Z-index para a imagem ficar por cima do conteúdo do texto */
+    z-index: 10;
+
+    /* Mantenha o posicionamento relativo para que o z-index funcione */
+    position: relative;
 }

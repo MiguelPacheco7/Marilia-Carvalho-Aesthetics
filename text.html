@@ -232,10 +232,10 @@
             </div>
         </section>
         <section class="desktop-only color-sec-cares">
-            <div class="min-h-[80vh] grid md:grid-cols-2 gap-8 sm:gap-12 items-center mt-16">
+            <div class="min-h-[80vh] grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
                 <div class="order-1 flex justify-center">
-                    <img src="/New Photos/SAVE_20250820_153606.jpg" alt="[Imagem da Dr.]"
-                        class="rounded-xl w-3/4 max-w-xs h-auto">
+                    <img src="/New Photos/SAVE_20250820_153606-removebg-preview.png" alt="[Imagem da Dr.]"
+                        class="rounded-xl img-sec-two">
                 </div>
                 <div class="order-2 flex flex-col items-start px-4 mr-8">
                     <div class="text-3xl font-semibold color-subtitle text-center md:text-left">
@@ -356,7 +356,7 @@
                 </div>
             </div>
         </section>
-        <section id="carousel" class="overlay-section1 py-14 md:py-24 sm:px-8 lg:px-16">
+        <section id="carousel" class="overlay-section1 sm:px-8 lg:px-16">
             <h3 class="text-center font-semibold text-amber-950 mb-4">CONGRESSO E EVENTOS</h3>
             <div class="carousel-3d-container">
                 <div class="carousel-3d">
@@ -415,7 +415,16 @@
                 </div>
             </div>
         </section>
-        <section id="atendimento" class="overlay-section py-16 md:py-24 sm:px-8 lg:px-16">
+        <section id="destaques" class="overlay-section px-4 sm:px-8 lg:px-16">
+            <div class="container mx-auto max-w-6xl">
+                <div class="text-center mb-12">
+                    <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br"
+                        class="inline-block bt-color font-semibold py-3 px-8 rounded-lg text-lg shadow-lg hover:shadow-xl transform hover:scale-105">
+                        Conheça mais pelo instagram
+                    </a>
+                </div>
+        </section>
+        <section id="atendimento" class="overlay-section py-16 md:py-24 sm:px-8 lg:px-16 back-sec-atendimento">
             <div class="container mx-auto">
                 <h2 class="section-title text-gray-800">Unidades de Atendimento</h2>
                 <div class="grid md:grid-cols-2 md:gap-8 relative">
@@ -445,12 +454,10 @@
             </div>
         </section>
 
-        <section id="contato" class="mobile-only overlay-section px-4 py-12 md:py-16">
-
-            <div
-                class="lg:hidden flex flex-col items-center card card-wtsp lg:max-w-5xl mx-auto shadow-lg overflow-hidden rounded-2xl">
-                <div
-                    class="py-12 px-8 lg:pl-20 lg:pr-8 lg:py-16 flex flex-col justify-center text-center lg:text-left flex-grow">
+        <section id="contato" class="mobile-only overlay-section">
+            <div class="relative lg:hidden flex flex-col items-center card card-wtsp lg:max-w-5xl mx-auto shadow-lg overflow-hidden">
+                <div class="block absolute inset-0 bg-black/30"></div>
+                <div class="z-10 py-12 px-8 lg:pl-20 lg:pr-8 lg:py-16 flex flex-col justify-end text-center lg:text-left flex-grow">
                     <h2 class="text-white text-2xl md:text-3xl font-bold mb-4">Agende já sua consulta!</h2>
                     <p class="text-white text-base md:text-lg max-w-xl lg:mx-0 mx-auto">
                         Entre em contato para tirar suas dúvidas e dar
@@ -461,9 +468,9 @@
                     <div class="flex justify-center lg:justify-start">
                         <a href="https://wa.me/5562994479641" target="_blank"
                             class="bg-green-500 text-white font-semibold py-3 px-6 rounded-lg inline-flex items-center text-base md:text-lg shadow-lg hover:bg-green-600 transform hover:scale-105 transition-all duration-300">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24"
-                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                stroke-linejoin="round" class="lucide lucide-whatsapp mr-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="lucide lucide-whatsapp mr-2">
                                 <path
                                     d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
                             </svg>
@@ -471,16 +478,11 @@
                         </a>
                     </div>
                 </div>
-                <div id="agende-consulta-img-container"
-                    class="md:ml-11 lg:absolute lg:bottom-16 lg:w-3/4 flex justify-center lg:justify-end pointer-events-none">
-                    <img src="/New Photos/1000055077-removebg-preview.png" alt="[Imagem de Marilia Carvalho]"
-                        class="max-w-md h-auto object-contain object-bottom pointer-events-auto lg:mt-0 lg:h-full rounded-br-4xl">
-                </div>
             </div>
         </section>
 
         <section class="desktop-only overlay-section px-4 py-16">
-            <div class="lg:flex items-center lg:max-w-5xl mx-auto overflow-hidden rounded-2xl">
+            <div class="card-wtsp-desk lg:flex items-center lg:max-w-5xl mx-auto rounded-2xl">
                 <div
                     class="py-12 px-8 lg:pl-20 lg:pr-8 lg:py-16 flex flex-col justify-center text-center lg:text-left flex-grow">
                     <h2 class="text-white text-3xl font-bold mb-4">Agende já sua consulta!</h2>
@@ -504,8 +506,8 @@
                     </div>
                 </div>
                 <div id="agende-consulta-img-container" class="lg:w-1/2 lg:flex lg:justify-end pointer-events-none">
-                    <img src="/New Photos/1000055077-removebg-preview.png" alt="[Imagem de Marilia Carvalho]"
-                        class="h-auto object-contain object-bottom pointer-events-auto lg:mt-0 lg:h-full rounded-br-4xl max-w-xs md:max-w-full">
+                    <img src="/New Photos/SAVE_20250820_153606-removebg-preview.png" alt="[Imagem de Marilia Carvalho]"
+                        class="h-auto object-contain object-bottom pointer-events-auto lg:mt-0 lg:h-full rounded-br-4xl max-w-xs md:max-w-full agende-consulta-img">
                 </div>
             </div>
         </section>
@@ -516,19 +518,19 @@
             class="px-16 container mx-auto flex flex-col md:grid md:grid-cols-3 gap-8 text-center md:text-left items-center">
 
             <div class="md:ml-10 order-2 md:order-2">
-                <h4 class="text-lg font-semibold text-white mb-3">LOCAIS DE ATENDIMENTO</h4>
-                <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Flamboyant Park Bussines - <a
-                        href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
-                <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro
-                    Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
+                <h4 class="text-lg font-semibold text-footer mb-3">LOCAIS DE ATENDIMENTO</h4>
+                <p class="text-sm text-footer mb-1"><strong>Goiânia:</strong> Flamboyant Park Bussines - <a
+                        href="index.html#atendimento" class="hover:text-black">Endereço completo.</a></p>
+                <p class="text-sm text-footer"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro
+                    Estética - <a href="index.html#atendimento" class="hover:text-black">Endereço completo.</a></p>
             </div>
 
             <div class="text-center order-2 md:order-2">
                 <div class="inline-block">
-                    <h4 class="font-semibold text-white mb-3">REDES SOCIAIS</h4>
+                    <h4 class="font-semibold text-footer mb-3">REDES SOCIAIS</h4>
                     <div class="flex justify-center space-x-4">
                         <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br"
-                            class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
+                            class="text-footer transition-colors" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                                 stroke-linejoin="round" class="lucide lucide-instagram">
@@ -537,7 +539,7 @@
                                 <line x1="17.5" x2="17.51" y1="6.5" y2="6.5" />
                             </svg>
                         </a>
-                        <a href="https://wa.me/5562994479641" class="text-gray-400 hover:text-white transition-colors"
+                        <a href="https://wa.me/5562994479641" class="text-footer transition-colors"
                             aria-label="WhatsApp">
                             <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
                                 viewBox="0 0 16 16">
@@ -551,13 +553,13 @@
 
             <div class="flex justify-center order-1 md:order-2">
                 <a href="/">
-                    <img src="/Marilia Loreni - Identidade Visual/MARCA D_ÁGUA/MD18.png"
+                    <img src="/Marilia Loreni - Identidade Visual/MARCA D_ÁGUA/MD20.png"
                         alt="Logo Marilia Carvalho Rodapé" class="img-logo-footer">
                 </a>
             </div>
 
         </div>
-        <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
+        <div class="mt-8 pt-8 border-t text-footer text-center text-sm ">
             <p>© <span id="currentYear"></span> Marilia Carvalho. Todos os direitos reservados.</p>
             <p>Desenvolvido com <span class="text-red-500">♥</span></p>
         </div>
