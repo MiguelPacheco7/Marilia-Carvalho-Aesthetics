@@ -394,8 +394,13 @@ footer {
     color: #1F2937;
 }
 
-#contato {
-    padding-top: 3rem;
+#contato.mobile-only {
+    margin-top: -30px;
+}
+
+
+#contato.mobile-only {
+    background: transparent;
 }
 
 .agende-consulta-img {
