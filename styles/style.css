@@ -3,3 +3,408 @@
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/preflight.css" layer(base);
 @import "tailwindcss/utilities.css" layer(utilities);
+
+/* Por padrão, esconde a seção de celular. */
+.mobile-only {
+    display: none;
+}
+
+/* Quando a tela for de até 768px de largura, esconde a seção de desktop e mostra a de celular. */
+@media (max-width: 768px) {
+    .desktop-only {
+        display: none;
+    }
+
+    .mobile-only {
+        display: block;
+        /* Ou flex, grid, etc., conforme a necessidade */
+    }
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-attachment: scroll;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+.floating-header {
+    position: sticky;
+    top: 1rem;
+    width: 95%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 1rem;
+    z-index: 100;
+    transition: top 0.3s ease-in-out;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.logo-header {
+    height: 48px;
+}
+
+@media (min-width: 768px) {
+    .logo-header {
+        height: 64px;
+    }
+}
+
+.bg-first-sec {
+    background-color: rgba(222, 202, 196);
+}
+
+.bg-second-third-sec {
+    background-color: #F5F5F5;
+}
+
+.color-subtitle {
+    color: #1F2937;
+}
+
+.text-color {
+    color: #8F6B6B;
+}
+
+.bt-color {
+    background-color: rgb(222, 202, 196);
+    color: white;
+}
+
+.shadowgray {
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #1E1E1E), var(--tw-ring-shadow, 0 0 #1E1E1E), var(--tw-shadow);
+}
+
+.btn-secondary {
+    background-color: #f5f5f5;
+    border-color: #f5f5f5;
+    color: #1F2937;
+}
+
+.section-title {
+    font-size: 2.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: #1F2937;
+    text-align: center;
+    margin-bottom: 1rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.img-sec-two {
+    margin-top: 20px;
+    height: 565px;
+}
+
+.overlay-section1 {
+    position: relative;
+    z-index: 2;
+    background: rgba(250, 235, 241);
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    box-shadow: 0 -20px 40px -15px rgba(0, 0, 0, 0.15);
+    transform: translateZ(0);
+}
+
+.overlay-section {
+    position: relative;
+    z-index: 2;
+    background: rgba(250, 235, 241);
+    transform: translateZ(0);
+}
+
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+}
+
+#carousel {
+    padding-top: 3.5rem/* 56px */;
+}
+
+.carousel-3d-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.carousel-3d {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    perspective: 1500px;
+    transform-style: preserve-3d;
+}
+
+.carousel-3d-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.carousel-3d-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+}
+
+.carousel-3d-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-3d-slide.active {
+    transform: translateZ(0) scale(1);
+    opacity: 1;
+    z-index: 10;
+}
+
+.carousel-3d-slide.prev {
+    transform: translateX(-45%) translateZ(-150px) rotateY(35deg) scale(0.8);
+    opacity: 0.5;
+    z-index: 5;
+}
+
+.carousel-3d-slide.next {
+    transform: translateX(45%) translateZ(-150px) rotateY(-35deg) scale(0.8);
+    opacity: 0.5;
+    z-index: 5;
+}
+
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.carousel-nav-btn:hover {
+    background-color: white;
+}
+
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
+
+@media (max-width: 767px) {
+    .carousel-3d {
+        height: 250px;
+    }
+
+    .carousel-3d-slide {
+        width: 80%;
+    }
+
+    .carousel-3d-slide.prev {
+        transform: translateX(-35%) translateZ(-50px) rotateY(20deg) scale(0.9);
+        opacity: 0.7;
+    }
+
+    .carousel-3d-slide.next {
+        transform: translateX(35%) translateZ(-50px) rotateY(-20deg) scale(0.9);
+        opacity: 0.7;
+    }
+
+    #prev-btn {
+        left: 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #next-btn {
+        right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.carousel-3d-descriptions {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 1.5rem auto 0;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-description-item {
+    position: absolute;
+    width: 100%;
+    transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.carousel-description-item.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+.testimonial-text-clamp {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    line-clamp: 3;
+}
+
+.testimonial-text-expanded {
+    -webkit-line-clamp: unset;
+    line-clamp: unset;
+}
+
+.scroll {
+    position: sticky;
+    top: 6rem;
+    z-index: 1;
+    width: 100%;
+    left: 0;
+}
+
+.page-header-bg {
+    background: linear-gradient(to bottom right, #f3e9e0, #e6dace);
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #e5e7eb;
+    display: flex;
+    flex-direction: column;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-card .quote-icon {
+    color: #cbb4a4;
+}
+
+.star-rating svg {
+    color: #f59e0b;
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+#destaques {
+    padding-top: 2rem /* 32px */;
+    padding-bottom: 5rem /* 80px */;
+}
+
+.card-wtsp {
+    height: 600px;
+    background-image: url('/New Photos/SAVE_20250820_153606.jpg');
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+}
+
+.card-wtsp-desk {
+    background-color: rgba(222, 202, 196);
+    background-size: cover;
+    background-position: center;
+    border-top-left-radius: 2rem;
+    border-top-right-radius: 2rem;
+    border-bottom-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+}
+
+.back-sec-atendimento {
+    background-color: #d6d6d6;
+}
+
+footer {
+    position: relative;
+    z-index: 2;
+    background-image: url(/Assets/cores\ site_page-0006.jpg);
+}
+
+.bg-first-sec-pc {
+    background-color: #faebf0;
+}
+
+.color-sec-cares {
+    background-color:
+        #d6c2ba;
+}
+
+.img-logo-footer {
+    width: 200px;
+}
+
+.cl-bg-sections {
+    background-color: #f5f5f5;
+}
+
+.text-footer {
+    color: #1F2937;
+}
+
+#contato {
+    padding-top: 3rem;
+}
+
+.agende-consulta-img {
+    /* Mover a imagem para cima. Ajuste o valor conforme a sua preferência */
+    margin-top: -80px;
+
+    /* Z-index para a imagem ficar por cima do conteúdo do texto */
+    z-index: 10;
+
+    /* Mantenha o posicionamento relativo para que o z-index funcione */
+    position: relative;
+}

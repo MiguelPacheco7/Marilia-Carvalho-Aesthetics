@@ -1,0 +1,303 @@
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    /* Enables smooth scrolling for anchor links */
+}
+
+.floating-header {
+    position: sticky;
+    top: 1rem;
+    width: 95%;
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    border-radius: 1rem;
+    z-index: 100;
+    /* Z-index alto para ficar acima de tudo */
+    transition: top 0.3s ease-in-out;
+    box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+}
+
+.bg-first-sec {
+    background-color: rgba(222, 202, 196);
+}
+
+.bg-second-third-sec {
+    background-color: #F5F5F5;
+}
+
+/* Oculta os DIVS dos containers por padrão em telas pequenas (celulares) */
+#quem-sou-eu-img-container,
+#agende-consulta-img-container {
+    display: none !important;
+}
+
+/* Mostra os DIVS dos containers em telas com largura de 768px ou mais (desktop) */
+@media (min-width: 768px) {
+
+    #quem-sou-eu-img-container,
+    #agende-consulta-img-container {
+        display: flex !important;
+        /* Usamos 'flex' porque o div já tem 'flex justify-center' */
+    }
+}
+
+.text-color {
+    color: #8F6B6B;
+}
+
+.color-subtitle {
+    color: #1F2937;
+}
+
+.bg-footer {
+    background-color: #51648C;
+}
+
+.bt-color {
+    background-color: rgb(222, 202, 196);
+    color: white;
+}
+
+/* Styles for the mobile menu */
+#mobile-menu {
+    transition: transform 0.3s ease-in-out;
+    /* Smooth transition for mobile menu visibility */
+}
+
+.page-header-bg {
+    /* Gradient background for the page header, consistent with other pages */
+    background: linear-gradient(to bottom right, #f3e9e0, #e6dace);
+}
+
+.content-section {
+    background-color: white;
+    /* White background for content sections */
+    border-radius: 0.75rem;
+    /* Rounded corners for content sections */
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+    /* Subtle shadow for depth */
+    padding: 2rem;
+    /* Padding inside content sections */
+}
+
+.carousel-3d-container {
+    position: relative;
+    width: 100%;
+    max-width: 1000px;
+    margin: 4rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+}
+
+.carousel-3d {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* Altura do carrossel padrão */
+    perspective: 1500px;
+    /* Efeito de profundidade */
+    transform-style: preserve-3d;
+}
+
+.carousel-3d-track {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.carousel-3d-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 60%;
+    /* Largura do slide principal padrão */
+    height: 100%;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+    /* Começam invisíveis */
+}
+
+.carousel-3d-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Slide Ativo (Central) */
+.carousel-3d-slide.active {
+    transform: translateZ(0) scale(1);
+    opacity: 1;
+    z-index: 10;
+}
+
+/* Slide Anterior */
+.carousel-3d-slide.prev {
+    transform: translateX(-45%) translateZ(-150px) rotateY(35deg) scale(0.8);
+    opacity: 0.5;
+    z-index: 5;
+}
+
+/* Slide Posterior */
+.carousel-3d-slide.next {
+    transform: translateX(45%) translateZ(-150px) rotateY(-35deg) scale(0.8);
+    opacity: 0.5;
+    z-index: 5;
+}
+
+/* Botões de Navegação */
+.carousel-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 40;
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s;
+}
+
+.carousel-nav-btn:hover {
+    background-color: white;
+}
+
+#prev-btn {
+    left: 10px;
+}
+
+#next-btn {
+    right: 10px;
+}
+
+/* Media Queries para Responsividade do Carrossel */
+/* Media Queries para ajuste em telas menores (celulares) */
+@media (max-width: 767px) {
+    .carousel-3d {
+        height: 250px;
+        /* Reduz a altura do carrossel em mobile */
+    }
+
+    .carousel-3d-slide {
+        width: 80%;
+        /* Aumenta a largura dos slides em mobile */
+    }
+
+    /* Simplifica as transformações para slides anterior e posterior em mobile */
+    .carousel-3d-slide.prev {
+        transform: translateX(-35%) translateZ(-50px) rotateY(20deg) scale(0.9);
+        opacity: 0.7;
+    }
+
+    .carousel-3d-slide.next {
+        transform: translateX(35%) translateZ(-50px) rotateY(-20deg) scale(0.9);
+        opacity: 0.7;
+    }
+
+    /* Ajusta a posição dos botões de navegação para telas menores */
+    #prev-btn {
+        left: 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #next-btn {
+        right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.bg-first-sec-pc {
+    background-color: #faebf0;
+}
+
+.img-logo-footer {
+    width: 200px;
+}
+
+@media (min-width: 768px) {
+    .ml-custom-desktop {
+        margin-left: 180px;
+    }
+}
+
+/* Media Queries para ajuste em telas menores (celulares) */
+@media (max-width: 767px) {
+    .carousel-3d {
+        height: 250px;
+    }
+
+    .carousel-3d-slide {
+        width: 80%;
+    }
+
+    /* Simplifica as transformações para slides anterior e posterior em mobile */
+    .carousel-3d-slide.prev {
+        transform: translateX(-35%) translateZ(-50px) rotateY(20deg) scale(0.9);
+        opacity: 0.7;
+    }
+
+    .carousel-3d-slide.next {
+        transform: translateX(35%) translateZ(-50px) rotateY(-20deg) scale(0.9);
+        opacity: 0.7;
+    }
+
+    /* Ajusta a posição dos botões de navegação para telas menores */
+    #prev-btn {
+        left: 5px;
+        width: 40px;
+        height: 40px;
+    }
+
+    #next-btn {
+        right: 5px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+.carousel-3d-descriptions {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    /* Ajuste a largura conforme necessário */
+    margin: 1.5rem auto 0;
+    height: 60px;
+    /* Altura para conter o texto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.carousel-description-item {
+    position: absolute;
+    width: 100%;
+    transition: all 0.6s cubic-bezier(0.77, 0, 0.175, 1);
+    opacity: 0;
+    transform: translateY(20px);
+    pointer-events: none;
+}
+
+.carousel-description-item.active {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
