@@ -46,28 +46,15 @@
                 color: #1F2937;
             }
 
-            .bt-color {
+            .bg-footer {
                 background-color: #51648C;
+            }
+
+            .bt-color {
+                background-color: rgb(222, 202, 196);
                 color: white;
             }
 
-            .brand-brown {
-                color: #3A2B1E;
-            }
-
-            .btn-primary {
-                background-color: #3A2B1E;
-                color: white;
-                transition: background-color 0.3s ease, transform 0.3s ease;
-            }
-
-            .btn-primary-footer {
-                background-color: #3A2B1E; /* Primary button background color */
-            }
-
-            .footer-bg {
-                background-color: #3A2B1E;
-            }
             /* Estilo para o menu hamburguer */
             #mobile-menu {
                 transition: transform 0.3s ease-in-out;
@@ -249,22 +236,19 @@
             </section>
         </main>
 
-        <footer class="bt-color text-gray-300 py-16">
-            <div class="px-16 container mx-auto grid md:grid-cols-3 gap-8 text-center md:text-left">
-                <div>
-                    <a href="/">
-                        <img src="/MARCA D_ÁGUA/MD11.png" alt="Logo Marilia Carvalho Rodapé">
-                    </a>
-                </div>
-                <div class="md:ml-10">
+        <footer class="bg-footer text-gray-300 py-16">
+            <div class="px-16 container mx-auto flex flex-col md:grid md:grid-cols-3 gap-8 text-center md:text-left items-center">
+                
+                <div class="md:ml-10 order-2 md:order-1">
                     <h4 class="text-lg font-semibold text-white mb-3">LOCAIS DE ATENDIMENTO</h4>
                     <p class="text-sm text-gray-400 mb-1"><strong>Goiânia:</strong> Flamboyant Park Bussines - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
                     <p class="text-sm text-gray-400"><strong>São Miguel do Passa Quatro:</strong> Marilia Carvalho Centro Estética - <a href="index.html#atendimento" class="hover:text-white">Endereço completo.</a></p>
                 </div>
-                <div class="md:text-right"> 
-                    <div class="flex items-center justify-center space-x-4 md:inline-block md:text-center"> 
-                        <h4 class="font-semibold text-white mb-0 md:mb-3">REDES SOCIAIS</h4>
-                        <div class="flex justify-center space-x-4"> 
+                
+                <div class="text-center order-3 md:order-1">
+                    <div class="inline-block">
+                        <h4 class="font-semibold text-white mb-3">REDES SOCIAIS</h4>
+                        <div class="flex justify-center space-x-4">
                             <a href="https://www.instagram.com/dra.marilliacarvalho/?hl=pt-br" class="text-gray-400 hover:text-white transition-colors" aria-label="Instagram">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-instagram"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
                             </a>
@@ -276,10 +260,17 @@
                         </div>
                     </div>
                 </div>
+
+                <div class="flex justify-center order-1 md:order-2">
+                    <a href="/">
+                        <img src="/Marilia Loreni - Identidade Visual//MARCA D_ÁGUA/MD18.png" alt="Logo Marilia Carvalho Rodapé" class="w-40 h-auto">
+                    </a>
+                </div>
+
             </div>
             <div class="mt-8 pt-8 border-t border-gray-700 text-center text-sm text-gray-400">
-                <p>&copy; <span id="currentYear"></span> Marilia Carvalho. Todos os direitos reservados.</p>
-                <p>Desenvolvido com <span class="text-red-500">&hearts;</span></p>
+                <p>© <span id="currentYear"></span> Marilia Carvalho. Todos os direitos reservados.</p>
+                <p>Desenvolvido com <span class="text-red-500">♥</span></p>
             </div>
         </footer>
 
