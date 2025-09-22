@@ -1,6 +1,23 @@
 // Aguarda o HTML da página ser completamente carregado antes de executar qualquer código.
 document.addEventListener('DOMContentLoaded', () => {
 
+    const lenis = new Lenis({
+        duration: 1.2,
+        easing: (t) => Math.min(1, 1 - Math.pow(1 - t, 4)), // https://easings.net
+        direction: 'vertical',
+        gestureDirection: 'vertical',
+        smooth: true,
+        smoothTouch: false,
+        touchMultiplier: 2,
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
     // Define o ano atual no rodapé
     const yearSpan = document.getElementById('currentYear');
     if (yearSpan) {
