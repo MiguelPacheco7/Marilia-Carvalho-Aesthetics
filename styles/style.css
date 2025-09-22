@@ -75,6 +75,11 @@ body {
     color: white;
 }
 
+.bt-color-two {
+    background-color: white;
+    color: #1F2937;
+}
+
 .shadowgray {
     --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
     --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
@@ -354,7 +359,7 @@ body {
 }
 
 .card-wtsp-desk {
-    background-color: rgba(222, 202, 196);
+    background-color: #f4f4f4;
     background-size: cover;
     background-position: center;
     border-top-left-radius: 2rem;
@@ -404,16 +409,21 @@ footer {
 }
 
 .agende-consulta-img {
-    /* Mover a imagem para cima. Ajuste o valor conforme a sua preferência */
-    margin-top: -80px;
-
-    /* Z-index para a imagem ficar por cima do conteúdo do texto */
+    /* Suas propriedades existentes que movem a imagem para cima */
+    margin-top: -110px;
+    position: relative;
     z-index: 10;
 
-    /* Mantenha o posicionamento relativo para que o z-index funcione */
-    position: relative;
+    /* --- NOVAS PROPRIEDADES PARA O EFEITO 3D --- */
+
+    /* 1. Adiciona uma sombra que segue o contorno da imagem */
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.2));
 }
 
 .space-b {
     padding-bottom: 100px;
+}
+
+.bg-tratamentos {
+    background-color: #d6d6d6;
 }
