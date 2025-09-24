@@ -9,8 +9,10 @@
     display: none;
 }
 
-/* Quando a tela for de até 768px de largura, esconde a seção de desktop e mostra a de celular. */
-@media (max-width: 768px) {
+/* QUANDO A TELA FOR DE ATÉ 1023px DE LARGURA (COBRINDO CELULARES E TABLETS NA VERTICAL),
+  ESCONDE A SEÇÃO DE DESKTOP E MOSTRA A DE CELULAR. 
+*/
+@media (max-width: 1023px) {
     .desktop-only {
         display: none;
     }

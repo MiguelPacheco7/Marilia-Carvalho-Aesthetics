@@ -34,8 +34,8 @@ body {
     display: none !important;
 }
 
-/* Mostra os DIVS dos containers em telas com largura de 768px ou mais (desktop) */
-@media (min-width: 768px) {
+/* Mostra os DIVS dos containers em telas com largura de 1024px ou mais (desktop) */
+@media (min-width: 1024px) {
 
     #quem-sou-eu-img-container,
     #agende-consulta-img-container {
