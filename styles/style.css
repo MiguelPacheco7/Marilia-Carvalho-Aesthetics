@@ -9,8 +9,10 @@
     display: none;
 }
 
-/* Quando a tela for de até 768px de largura, esconde a seção de desktop e mostra a de celular. */
-@media (max-width: 768px) {
+/* QUANDO A TELA FOR DE ATÉ 1023px DE LARGURA (COBRINDO CELULARES E TABLETS NA VERTICAL),
+  ESCONDE A SEÇÃO DE DESKTOP E MOSTRA A DE CELULAR. 
+*/
+@media (max-width: 1023px) {
     .desktop-only {
         display: none;
     }
@@ -73,6 +75,11 @@ body {
 .bt-color {
     background-color: rgb(222, 202, 196);
     color: white;
+}
+
+.bt-color-two {
+    background-color: white;
+    color: #1F2937;
 }
 
 .shadowgray {
@@ -313,8 +320,8 @@ body {
     background: linear-gradient(to bottom right, #f3e9e0, #e6dace);
 }
 
-.testimonial-card {
-    background-color: white;
+.treatment-card {
+    background-color: #F5F5F5;
     border-radius: 0.75rem;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
     overflow: hidden;
@@ -354,7 +361,7 @@ body {
 }
 
 .card-wtsp-desk {
-    background-color: rgba(222, 202, 196);
+    background-color: #f4f4f4;
     background-size: cover;
     background-position: center;
     border-top-left-radius: 2rem;
@@ -394,17 +401,36 @@ footer {
     color: #1F2937;
 }
 
-#contato {
-    padding-top: 3rem;
+#contato.mobile-only {
+    margin-top: -25px;
+}
+
+
+#contato.mobile-only {
+    background: transparent;
 }
 
 .agende-consulta-img {
-    /* Mover a imagem para cima. Ajuste o valor conforme a sua preferência */
-    margin-top: -80px;
-
-    /* Z-index para a imagem ficar por cima do conteúdo do texto */
+    /* Suas propriedades existentes que movem a imagem para cima */
+    height: 550px;
+    margin-top: -110px;
+    margin-right: -50px;
+    position: relative;
     z-index: 10;
 
-    /* Mantenha o posicionamento relativo para que o z-index funcione */
-    position: relative;
+    /* --- NOVAS PROPRIEDADES PARA O EFEITO 3D --- */
+
+    /* 1. Adiciona uma sombra que segue o contorno da imagem */
+    filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.2));
 }
+
+.space-b {
+    padding-bottom: 100px;
+}
+
+#h-text-div {
+    padding-top: 120px;
+}
+
+/*-- Developed by Miguel A. Pacheco - Optimum co.
+GitHub - MiguelPacheco7*/

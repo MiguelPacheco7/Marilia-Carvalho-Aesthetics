@@ -305,7 +305,7 @@
     }
     @media (width >= 96rem) {
       max-width: 96rem;
-<<<<<<< HEAD
+
     }
   }
   .mx-auto {
@@ -1718,8 +1718,6 @@
       --tw-scale-x: 1;
       --tw-scale-y: 1;
       --tw-scale-z: 1;
-=======
->>>>>>> b3b661fa446f09a0129129d7120fd8d66d0eea4f
     }
   }
   .mx-auto {

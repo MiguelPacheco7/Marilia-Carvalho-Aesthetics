@@ -34,14 +34,27 @@ body {
     display: none !important;
 }
 
-/* Mostra os DIVS dos containers em telas com largura de 768px ou mais (desktop) */
-@media (min-width: 768px) {
+/* Mostra os DIVS dos containers em telas com largura de 1024px ou mais (desktop) */
+@media (min-width: 1024px) {
 
     #quem-sou-eu-img-container,
     #agende-consulta-img-container {
         display: flex !important;
         /* Usamos 'flex' porque o div já tem 'flex justify-center' */
     }
+}
+
+/* ===== CÓDIGO DE CORREÇÃO FORÇADA ===== */
+/* Aplica o layout de duas colunas na seção 'sobre-mim' para desktop */
+
+@media (min-width: 1024px) {
+
+    #sobre-mim .desktop-only .grid {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        align-items: stretch !important;
+    }
+
 }
 
 .text-color {
@@ -300,4 +313,12 @@ body {
     opacity: 1;
     transform: translateY(0);
     pointer-events: auto;
+}
+
+#space-1 {
+    padding-left: 100px;
+}
+
+#space-2 {
+    padding-top: 130px;
 }
