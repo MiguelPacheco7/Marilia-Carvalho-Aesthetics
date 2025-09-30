@@ -352,10 +352,12 @@ body {
 }
 
 .card-wtsp {
-    height: 600px;
-    background-image: url('/New Photos/IMG_7869.JPG');
+    margin-top: -10px;
+    background-color: #d6c2ba;
+    height: 500px;
+    background-image: url('/New Photos/IMG_7953.png');
     background-size: cover;
-    background-position: center;
+    background-position: center -100px; 
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
 }
@@ -413,13 +415,11 @@ footer {
 .agende-consulta-img {
     /* Suas propriedades existentes que movem a imagem para cima */
     height: 550px;
-    margin-top: -110px;
-    margin-right: -50px;
+    margin-top: -150px;
     position: relative;
     z-index: 10;
 
     /* --- NOVAS PROPRIEDADES PARA O EFEITO 3D --- */
-
     /* 1. Adiciona uma sombra que segue o contorno da imagem */
     filter: drop-shadow(0px 10px 15px rgba(0, 0, 0, 0.2));
 }
