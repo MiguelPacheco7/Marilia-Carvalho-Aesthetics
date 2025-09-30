@@ -56,10 +56,6 @@ body {
     }
 }
 
-#img-sec-1 {
-    margin-right: -35px;
-}
-
 .bg-first-sec {
     background-color: rgba(222, 202, 196);
 }
@@ -358,10 +354,11 @@ body {
 .card-wtsp {
     margin-top: -10px;
     background-color: #d6c2ba;
-    height: 500px;
+    /* ALTERAÇÃO CHAVE AQUI: Altura relativa à tela (65% da altura da tela) */
+    height: 65vh; 
     background-image: url('/New Photos/IMG_7953.png');
     background-size: cover;
-    background-position: center -100px; 
+    background-position: center bottom; 
     border-top-left-radius: 2rem;
     border-top-right-radius: 2rem;
 }
@@ -434,6 +431,15 @@ footer {
 
 #h-text-div {
     padding-top: 90px;
+}
+
+/* AJUSTE FINAL PARA TABLETS (768px a 1023px) */
+/* Agora, o card ocupará 90% da altura da tela em tablets. */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .card-wtsp {
+        /* Aumentamos de 75vh para 90vh para dar mais espaço vertical. */
+        height: 90vh; 
+    }
 }
 
 /*-- Developed by Miguel A. Pacheco - Optimum co.
