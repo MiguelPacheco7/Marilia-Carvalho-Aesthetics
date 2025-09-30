@@ -56,6 +56,10 @@ body {
     }
 }
 
+#img-sec-1 {
+    margin-right: -35px;
+}
+
 .bg-first-sec {
     background-color: rgba(222, 202, 196);
 }
